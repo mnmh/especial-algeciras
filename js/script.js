@@ -1,13 +1,27 @@
 gsap.registerPlugin(ScrollTrigger);
 
+function createExplosion(amount, where) {
+	for (let i = 0; i < amount; i++) {
+		let div = document.createElement("div");
+    div.className = "cuadritos";
+    document.getElementById(where).appendChild(div);
+	}
+}
+createExplosion(25, "explode-1");
+createExplosion(70, "explode-2");
+createExplosion(140, "explode-3");
+createExplosion(200, "explode-4");
+gsap.set(".cuadritos", {width: "random(5%, 20%)", height: "random(5%, 20%)", marginRight: "random(1%, 10%)", transformOrigin: "center center"});
+
+
 function windowSize(){
-  // var iglesia = document.querySelector('.nop');
-  // var iglesiaBox = document.querySelector('.old-box');
-  // var iglesiaW = iglesia.clientWidth + "px";
+  // let iglesia = document.querySelector('.nop');
+  // let iglesiaBox = document.querySelector('.old-box');
+  // let iglesiaW = iglesia.clientWidth + "px";
   // iglesiaBox.style.width = iglesiaW;
   // alert(iglesiaW);
 
-  var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
   if(viewportWidth > 0) { 
     document.getElementById("sizeW").innerHTML = "small " + viewportWidth;
   }
@@ -27,12 +41,6 @@ function windowSize(){
 windowSize();
 window.addEventListener('resize', windowSize, false);
 
-gsap.to('progress', {
-  value: 100,
-  ease: 'none',
-  scrollTrigger: { scrub: 0.3 }
-});
-
 gsap.to(".scrollArrow", {
   opacity: 0,
   scrollTrigger: {
@@ -51,14 +59,12 @@ ScrollTrigger.create({
 });
 
 ScrollTrigger.create({
-  // markers: true,
   trigger: ".hero-img-left",
   start: "top bottom", 
   end: "bottom 30%",
   pin: ".hero-letters"
 });
 ScrollTrigger.create({
-  // markers: tru e,
   trigger: ".hero-img-left",
   start: "top bottom", 
   end: "bottom 30%",
@@ -83,7 +89,8 @@ ScrollTrigger.matchMedia({
       yPercent: "random(-500, 10)", 
       xPercent: "random(-750, 750)",
       scale: "random(2, 7)",
-      opacity: "random(0.6, 1)",
+      opacity: 1,
+      force3D: false,
       scrollTrigger: {
         trigger: ".hero-letters_box",
         start: "top 5%",
@@ -98,7 +105,8 @@ ScrollTrigger.matchMedia({
       yPercent: "random(-600, 150)", 
       xPercent: "random(-350, 350)",
       scale: "random(2, 6)",
-      opacity: "random(0.6, 1)",
+      opacity: 1,
+      force3D: false,
       scrollTrigger: {
         trigger: ".hero-letters_box",
         start: "top 5%",
@@ -109,11 +117,51 @@ ScrollTrigger.matchMedia({
   }
 });
 
-let fotoScroll = 30;
-// gsap.set(".foto-red", {opacity: 1});
 
-const tlOld = gsap.timeline({
-  defaults: {ease: "power2.out"},
+gsap.fromTo("h1 span", {yPercent: 100}, {
+  yPercent: -25,
+  scrollTrigger: {
+    trigger: "h1 span",
+    start: "top 90%",
+    end: "bottom 10%",
+    scrub: true
+  }
+});
+
+function fotoOld() {
+  let tl = gsap.timeline({
+    defaults: {duration: 30, ease: "power2.out"}
+  });
+  tl.from(".foto-old-5b", {y: innerHeight, delay: 2}, "iglesiaStart")
+    .from(".foto-old-5", {y: innerHeight}, "<")
+    .from(".foto-old-4b", {y: innerHeight}, "iglesiaStart+=20")
+    .from(".foto-old-4", {y: innerHeight}, "<")
+    .from(".foto-old-3b", {y: innerHeight}, "iglesiaStart+=30")
+    .from(".foto-old-3", {y: innerHeight}, "<")
+    .from(".foto-old-2b", {y: innerHeight}, "iglesiaStart+=46")
+    .from(".foto-old-2", {y: innerHeight}, "<")
+    .from(".foto-old-1b", {y: innerHeight}, "iglesiaStart+=65")
+    .from(".foto-old-1", {y: innerHeight}, "<");
+  return tl;
+}
+
+function iglesiaShot(fotoTarget, colorFondo) {
+  let tl = gsap.timeline({
+    defaults: {duration: 2, ease: "power2.out"}
+  });
+  tl
+  .to(fotoTarget, {opacity: 1, delay: 80})
+  .to(".old-container", {scale: 0.9, transformOrigin: "center center"})
+  .to(".iglesia", {fill: "var(--color-red)"})
+  .to(".old", {background: "var(--color-red)"}, "<")
+  .to(".old-container", {scale: 1, transformOrigin: "center center"})
+  .to(".iglesia", {fill: colorFondo})
+  .to(".old", {background: colorFondo}, "<")
+  ;
+  return tl;
+}
+
+let tlOld = gsap.timeline({
   scrollTrigger: {
     trigger: ".old",
     start: "20% 20%",
@@ -122,38 +170,24 @@ const tlOld = gsap.timeline({
     pin: ".old"
   }
 });
-tlOld.from(".foto-old-5b", {y: innerHeight, duration: fotoScroll, delay: 2}, "iglesiaStart")
-  .from(".foto-old-5", {y: innerHeight, duration: fotoScroll}, "<")
-  .from(".foto-old-4b", {y: innerHeight, duration: fotoScroll}, "iglesiaStart+=20")
-  .from(".foto-old-4", {y: innerHeight, duration: fotoScroll}, "<")
-  .from(".foto-old-3b", {y: innerHeight, duration: fotoScroll}, "iglesiaStart+=30")
-  .from(".foto-old-3", {y: innerHeight, duration: fotoScroll}, "<")
-  .from(".foto-old-2b", {y: innerHeight, duration: fotoScroll}, "iglesiaStart+=46")
-  .from(".foto-old-2", {y: innerHeight, duration: fotoScroll}, "<")
-  .from(".foto-old-1b", {y: innerHeight, duration: fotoScroll}, "iglesiaStart+=65")
-  .from(".foto-old-1", {y: innerHeight, duration: fotoScroll}, "<")
-  .to(".foto-old-3 .foto-red", {opacity: 1, duration: 0.8, delay: 2})
-  .fromTo(".old-container", {x: -5}, {x: 5, duration: 0.8, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".iglesia", {fill: "var(--color-red1)", duration: 0.8}, "<")
-  .to(".old", {background: "var(--color-red1)", duration: 0.8}, "<")
-  .to(".foto-old-4 .foto-red", {opacity: 1, duration: 0.8}, "+=4")
-  .fromTo(".old-container", {x: -10}, {x: 10, duration: 0.8, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".iglesia", {fill: "var(--color-red2)", duration: 0.8}, "<")
-  .to(".old", {background: "var(--color-red2)", duration: 0.8}, "<")
-  .to(".foto-old-1 .foto-red", {opacity: 1, duration: 0.8}, "+=4")
-  .fromTo(".old-container", {x: -15}, {x: 15, duration: 0.8, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".iglesia", {fill: "var(--color-red3)", duration: 0.8}, "<")
-  .to(".old", {background: "var(--color-red3)", duration: 0.8}, "<")
-  .to(".old", {"--border-color":"var(--main-bg-color)", duration: 0.8}, "<")
-  .to(".foto-old-5 .foto-red", {opacity: 1, duration: 0.8}, "+=4")
-  .fromTo(".old-container", {x: -20}, {x: 20, duration: 0.8, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".iglesia", {fill: "var(--color-red4)", duration: 0.8}, "<")
-  .to(".old", {background: "var(--color-red4)", duration: 0.8}, "<")
-  .to(".foto-old-2 .foto-red", {opacity: 1, duration: 0.8}, "+=4")
-  .fromTo(".old-container", {x: -25}, {x: 25, duration: 2, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".iglesia", {fill: "var(--color-red)", duration: 0.8}, "<")
-  .fromTo(".old-container", {x: -15}, {x: 15, duration: 3, repeat: 5, yoyo: true, ease: Quad.easeInOut}, "<")
-  .to(".old", {background: "var(--color-red)", duration: 0.8}, "<");
+tlOld
+  // .add.pause()
+  .add(fotoOld())
+  .add(iglesiaShot(".foto-old-3 .foto-red", "var(--color-red1)"))
+  .add(iglesiaShot(".foto-old-4 .foto-red", "var(--color-red2)"))
+  .add(iglesiaShot(".foto-old-1 .foto-red", "var(--color-red3)"))
+  .add(iglesiaShot(".foto-old-5 .foto-red", "var(--color-red4)"))
+  .to(".old", {"--border-color":"var(--main-bg-color)", duration: 1}, "<")
+  .add(iglesiaShot(".foto-old-2 .foto-red", "var(--color-red)"))
+  .to(".old-container", {scale: 0.9, transformOrigin: "center center", duration: 10, repeat: 20})
+  .to(".old-container", {scale: 1, transformOrigin: "center center", duration: 1})
+  // .to(".fotoBack", {opacity: 0}, "<")
+  // .fromTo(".cuadritos", {xPercent: 0, yPercent: 0, scale: 1, opacity: 1}, {xPercent: "random(-300, 300)", yPercent: "random(-300, 300)", scale: "random(2, 4)", opacity: 0, duration: 200}, "<")
+  // .to(".explode-box", {opacity: 1}, "<")
+  
+  ;
+  
+  
 
 
 
