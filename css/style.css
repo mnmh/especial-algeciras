@@ -75,7 +75,7 @@ select {
   --hero-bg-color: #81c3a5;
   --hero-color: #0e1512;
   --main-color: #44303c;
-  --font-size: 14pt;
+  --font-size: 12pt;
   --stroke-desk: 1px;
   --stroke-mobile: 2px;
   --border-color: var(--main-color);
@@ -117,13 +117,16 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #d1c286;
+  color: var(--color-red);
   outline: none;
   text-decoration: none;
 }
 
 p {
   margin-bottom: 20px;
+  border-left: 1px solid rgba(68, 48, 60, 0.4);
+  border-left: 1px solid var(--main-color);
+  padding-left: 20px;
 }
 
 h1,
@@ -143,7 +146,7 @@ figure {
 h1 {
   font-size: calc(6vw + 5.5vh + 1vmin);
   line-height: 0.9;
-  margin: 15vh 0;
+  margin: 20vh 0;
   letter-spacing: -5px;
 }
 h1 span {
@@ -233,14 +236,14 @@ sup {
 }
 
 .hero {
-  z-index: 1;
+  z-index: 2;
   width: 85vw;
   max-width: 1460px;
   margin: 0 auto;
   position: relative;
   background: var(--hero-bg-color);
   color: var(--hero-color);
-  margin-bottom: 10vh;
+  margin-bottom: 20vh;
   padding-bottom: 10vh;
   border-radius: 0 0 20px 20px;
   -webkit-border-radius: 0 0 20px 20px;
@@ -271,8 +274,8 @@ sup {
   text-transform: uppercase;
   font-size: calc(5vw + 4vh + 2vmin);
   color: var(--main-bg-color);
-  mix-blend-mode: multiply;
-  margin-left: -4px;
+  /* mix-blend-mode: multiply; */
+  margin-left: -5px;
   line-height: 1;
 }
 .hero-dpto {
@@ -313,12 +316,8 @@ sup {
   height: 100%;
 }
 .mapa-algeciras {
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-  fill: none;
   stroke: var(--main-bg-color);
-  stroke-width: 4;
+  stroke-width: 2;
   margin-top: 2vh;
 }
 .hero-info-text {
@@ -356,7 +355,7 @@ blockquote {
 blockquote svg {
   position: absolute;
   z-index: -1;
-  top: -10%;
+  top: -40%;
   left: -8%;
   width: 30%;
   fill: var(--hero-bg-color);
@@ -366,26 +365,26 @@ blockquote svg {
   width: 95vw;
   max-width: 1460px;
   margin: auto;
-  margin-bottom: 10vh;
   position: relative;
+  z-index: 1;
+  border: solid 1px rgba(255, 255, 255, 0);
 }
 .context-text {
   position: relative;
   z-index: 10;
-  margin: 8% 35% 0 10%;
+  margin: 40% 35% 0 10%;
   width: 55%;
 }
 .context-text cite {
   display: block;
   font-size: calc(var(--font-size) - 3pt);
   font-style: normal;
-  margin-left: 40px;
-  margin-bottom: 10px;
+  margin: 20px 0 0 40px;
 }
 .context-map {
   position: absolute;
   z-index: 5;
-  top: 0;
+  top: -25%;
   right: 0;
   width: 40vw;
 }
@@ -449,128 +448,7 @@ blockquote svg {
   max-width: 100vw;
   max-height: 100vh;
 }
-
-.iglesia {
-  fill: var(--main-bg-color);
-}
-.iglesia-stroke {
-  fill: none;
-  stroke: var(--border-color);
-  stroke-width: 1px;
-}
-
-.foto {
-  position: absolute;
-  padding: 1.2vh;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-}
-.border {
-  border-color: var(--border-color);
-  border-width: var(--stroke-desk);
-  border-style: solid;
-}
-.foto img {
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-}
-.foto-old-1,
-.foto-old-2,
-.foto-old-3,
-.foto-old-4,
-.foto-old-5 {
-  background: var(--main-bg-color);
-}
-.foto-old-1b {
-  z-index: 34;
-}
-.foto-old-2b {
-  z-index: 33;
-}
-.foto-old-3b {
-  z-index: 32;
-}
-.foto-old-4b {
-  z-index: 31;
-}
-.foto-old-5b {
-  z-index: 30;
-}
-.foto-old-1 {
-  z-index: 15;
-}
-.foto-old-2 {
-  z-index: 14;
-}
-.foto-old-3 {
-  z-index: 13;
-}
-.foto-old-4 {
-  z-index: 12;
-}
-.foto-old-5 {
-  z-index: 11;
-}
-.foto-old-1,
-.foto-old-1b {
-  top: 10%;
-  left: 26%;
-  width: 40%;
-}
-.foto-old-2,
-.foto-old-2b {
-  top: 32%;
-  left: 32%;
-  width: 40%;
-}
-.foto-old-3,
-.foto-old-3b {
-  top: 45%;
-  left: 14%;
-  width: 38%;
-}
-.foto-old-4,
-.foto-old-4b {
-  top: 42%;
-  left: 60%;
-  width: 36%;
-}
-.foto-old-5,
-.foto-old-5b {
-  top: 56%;
-  left: 10%;
-  width: 78%;
-}
-.foto-red {
-  background-color: #f7392b;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-.foto-red img {
-  filter: grayscale(100%) contrast(2);
-  -webkit-filter: grayscale(100%) contrast(2);
-  mix-blend-mode: multiply;
-}
-.foto-red::before {
-  background-color: #16006f;
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  mix-blend-mode: lighten;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+.old-red {
 }
 
 .explode-box {
@@ -668,13 +546,14 @@ blockquote svg {
   display: inline-block;
 }
 .guzman-info.new p {
-  margin-top: 8vh;
+  margin-top: 6vh;
 }
 .guzman-info h2 {
   /* color: var(--main-bg-color); */
 }
 .guzman-info.foto {
   height: 50vh;
+  margin-top: 20vh;
 }
 .guzman-foto {
   width: 45%;
@@ -697,11 +576,19 @@ blockquote svg {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+}
+.guzman-info.foto h2 {
+  text-transform: capitalize;
+  color: var(--guzman-back);
+  font-size: calc(5vw + 4vh + 2vmin);
+  line-height: 0.66;
+  position: absolute;
+  left: 6%;
+  bottom: -20%;
+}
+.guzman-info.obra {
+  position: relative;
+  height: 40vh;
 }
 .guzman-info.obra::after {
   content: ".";
@@ -713,27 +600,31 @@ blockquote svg {
 .guzman-info.obra p {
   width: 45%;
   position: absolute;
-  z-index: 12;
-  top: 45%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  z-index: 1;
+  top: -30%;
+}
+.guzman-info.obra p.cristo-title {
+  top: auto;
+  bottom: 25%;
+  width: 40%;
+  margin-left: 15%;
+  font-size: calc(var(--font-size) - 4pt);
+  font-style: italic;
+  z-index: 10;
+  border-left: none;
+  padding-left: 0;
 }
 .cristo {
-  width: 60%;
-  height: 100%;
   position: absolute;
-  right: 2vw;
-  top: -5vh;
-}
-.guzman-info.obra img {
-  position: absolute;
+  z-index: 5;
   max-width: 60%;
-  max-height: 120vh;
+  max-height: 110vh;
   right: 20px;
-  top: 0;
+  bottom: 0;
+}
+.cristo img {
+  position: absolute;
+  max-height: 110vh;
 }
 .cristo-1 {
   z-index: 20;
@@ -741,14 +632,22 @@ blockquote svg {
 .cristo-2 {
   z-index: 15;
 }
-.cristo-3 {
-  z-index: 10;
-}
-.guzman-info.obra img.cristo-4 {
+.cristo-4 {
   z-index: 5;
+}
+.cristo img.cristo-3 {
+  z-index: 10;
   position: relative;
+}
+.cristo-off {
+  position: relative;
+  width: 60%;
+  max-height: 120vh;
   float: right;
-  right: 0;
+  opacity: 0;
+}
+.guzman-back.obras {
+  /* margin-top: 10vh; */
 }
 .guzman-back.obras::after {
   content: "";
@@ -766,6 +665,7 @@ blockquote svg {
   max-width: 1460px;
   padding: 0 20px;
   text-align: justify;
+  text-align: center;
   position: relative;
   z-index: 5;
 }
@@ -780,11 +680,73 @@ blockquote svg {
   max-height: 50vh;
   display: inline-block;
 }
-.guzman-info.obras {
-  margin-top: 2vh;
+
+.guzman-back.caido {
+  padding: 0;
 }
-.guzman-info.obras p {
-  width: 60%;
+.guzman-back.caido::after {
+  content: "";
+  width: 100%;
+  height: 30%;
+  background: var(--main-bg-color);
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+.caido-box {
+  width: 100%;
+  margin: auto;
+  max-width: 1460px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+.caido-box p {
+  position: absolute;
+  width: 38%;
+  top: 8%;
+  right: 15%;
+}
+
+.button {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  background: 1px solid var(--guzman-back);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 250ms ease-in-out;
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
+  -o-transition: all 250ms ease-in-out;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+button.obras:hover,
+button.obras:focus {
+  background: var(--color-red);
+  border: 1px solid var(--guzman-back);
+  color: var(--main-bg-color);
 }
 
 @media screen and (min-width: 1024px) {
