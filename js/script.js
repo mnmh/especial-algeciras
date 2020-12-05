@@ -1,25 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-function createExplosion(amount, where) {
-	for (let i = 0; i < amount; i++) {
-		let div = document.createElement("div");
-    div.className = "cuadritos";
-    document.getElementById(where).appendChild(div);
-	}
-}
-createExplosion(25, "explode-1");
-createExplosion(70, "explode-2");
-createExplosion(140, "explode-3");
-createExplosion(200, "explode-4");
-gsap.set(".cuadritos", {width: "random(5%, 20%)", height: "random(5%, 20%)", marginRight: "random(1%, 10%)", transformOrigin: "center center"});
-
-
 function windowSize(){
-  // let iglesia = document.querySelector('.nop');
-  // let iglesiaBox = document.querySelector('.old-box');
-  // let iglesiaW = iglesia.clientWidth + "px";
-  // iglesiaBox.style.width = iglesiaW;
-  // alert(iglesiaW);
 
   let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
   if(viewportWidth > 0) { 
@@ -130,7 +111,7 @@ const tlMap = gsap.timeline({
 tlMap
 .addLabel("map")
 .from(".map-algeciras", {duration: 0.7, scale: 100, xPercent:-100, transformOrigin: "center center"})
-.from(".map-huila", {duration: 0.4, scale: 40,transformOrigin: "center center"}, "map")
+.from(".map-huila", {duration: 0.4, scale: 40, transformOrigin: "center center"}, "map")
 .from(".map-colombia", {duration: 0.3, scale: 40,transformOrigin: "center center"}, "map")
 .from(".map-colombia", {duration: 0.3, fill: "#faf7f0"}, "ma+=0.35")
 .from(".location-pin", {duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom"}, "-=.3");
@@ -174,79 +155,80 @@ gsap.fromTo("h1 span", {yPercent: 100}, {
 });
 
 gsap.set(".old-red", { autoAlpha: 0 });
-gsap.set(".debris", {autoAlpha: 0});
+gsap.set(".ruinas", { autoAlpha: 0 });
+gsap.set(".nav", { autoAlpha: 0 });
 
-function fotoOld() {
-  let tl = gsap.timeline({
-    defaults: {duration: 30, ease: "power2.out"}
-  });
-  tl
-  .from(".foto-old-5b", { y: innerHeight, delay: 2 },"iglesiaStart")
-  .from(".foto-old-5", {y: innerHeight}, "<")
-  .from(".foto-old-4b", {y: innerHeight}, "iglesiaStart+=20")
-  .from(".foto-old-4", {y: innerHeight}, "<")
-  .from(".foto-old-3b", {y: innerHeight}, "iglesiaStart+=30")
-  .from(".foto-old-3", {y: innerHeight}, "<")
-  .from(".foto-old-2b", {y: innerHeight}, "iglesiaStart+=46")
-  .from(".foto-old-2", {y: innerHeight}, "<")
-  .from(".foto-old-1b", {y: innerHeight}, "iglesiaStart+=65")
-  .from(".foto-old-1", {y: innerHeight}, "<");
-  return tl;
-}
+let select = (selector) => {
+	return document.querySelector(selector);
+};
+let next_btn = select("#next_btn");
+next_btn.addEventListener("click", () => shots.play());
 
-function iglesiaShot(fotoTarget, colorFondo) {
-  let tl = gsap.timeline({
-    defaults: {duration: 2, ease: "power2.out"}
-  });
-  tl
-  .to(fotoTarget, {opacity: 1, delay: 80})
-  .to(".old-container", {scale: 0.9, transformOrigin: "center center"})
-  .to(".iglesia", {fill: "var(--color-red)"})
-  .to(".old", {background: "var(--color-red)"}, "<")
-  .to(".old-container", {scale: 1, transformOrigin: "center center"})
-  .to(".iglesia", {fill: colorFondo})
-  .to(".old", {background: colorFondo}, "<")
-  ;
-  return tl;
-}
-
-function prueba() {
-  alert("hola mundo");
-}
-
-const heightMore = innerHeight + 100;
-
-const tlOld = gsap.timeline({
+const fotoOld = gsap.timeline({
   scrollTrigger: {
     markers: true,
     trigger: ".old",
     start: "20% 20%",
-    end: "bottom -100%",
+    end: "bottom -2000%",
     pin: ".old",
-    scrub: true
+    scrub: 0.5
   }
-});
-tlOld
-.addLabel("iglesia")
-.from(".old-5, .border-5", {y: heightMore, ease: "power2.out", delay: 0.2 })
-.from(".old-4, .border-4", {y: heightMore, ease: "power2.out"}, "-=0.15")
-.from(".old-3, .border-3", {y: heightMore, ease: "power2.out"}, "-=0.15")
-.from(".old-2, .border-2", {y: heightMore, ease: "power2.out"}, "-=0.15")
-.from(".old-1, .border-1", {y: heightMore, ease: "power2.out"}, "-=0.15")
-// .add.pause()
-// .add(fotoOld())
-// .add(iglesiaShot(".foto-old-3 .foto-red", "var(--color-red1"))
-// .add(iglesiaShot(".foto-old-4 .foto-red", "var(--color-red2"))
-// .add(iglesiaShot(".foto-old-1 .foto-red", "var(--color-red3"))
-// .add(iglesiaShot(".foto-old-5 .foto-red", "var(--color-red4"))
-// .to(".old", {"--border-color":"var(--main-bg-color)",duration: 1}, "<")
-// .add(iglesiaShot(".foto-old-2 .foto-red", "var(--color-red"))
-// .to(".old-container", {scale: 0.9, transformOrigin: "centercenter", duration: 10, repeat: 20})
-// .to(".old-container", {scale: 1, transformOrigin: "centercenter", duration: 1})
-// .to(".fotoBack", {opacity: 0}, "<")
-// .fromTo(".cuadritos", {xPercent: 0, yPercent: 0, scale: 1,opacity: 1}, {xPercent: "random(-300, 300)", yPercent: "rando(-300, 300)", scale: "random(2, 4)", opacity: 0, duration: 200, "<")
-// .to(".explode-box", {opacity: 1}, "<")
+})
+  .from(".old-5, .border-5", { y: innerHeight, ease: "power2.out", delay: 0.2 })
+  .from(".old-4, .border-4", { y: innerHeight, ease: "power2.out" }, "-=0.15")
+  .from(".old-3, .border-3", { y: innerHeight, ease: "power2.out" }, "-=0.15")
+  .from(".old-2, .border-2", { y: innerHeight, ease: "power2.out" }, "-=0.15")
+  .from(".old-1, .border-1", { y: innerHeight, ease: "power2.out" }, "-=0.15")
+  .to(".nav", { autoAlpha: 1 })
+  .to(".old", { autoAlpha: 1, duration: 2 })
+  .to(".nav", { autoAlpha: 0 })
+  .to(".fotos-old, .borders", { autoAlpha: 0 }, "<")
+  .to(".ruinas-3", { autoAlpha: 1 })
+  .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1, ease: "power3.inOut" }, "<")
+  .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
+  .to(".ruinas-1", { autoAlpha: 1 }, "<")
+  .to(".iglesia-old", { xPercent: -20, yPercent: -25, duration: 1, ease: "power3.inOut" }, "<")
+  .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
+  .to(".ruinas-2", { autoAlpha: 1 }, "<")
+  .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration: 1, ease: "power3.inOut" }, "<")
+  .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
+  .to(".ruinas-4", { autoAlpha: 1 }, "<")
+  .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration: 1, ease: "power3.inOut" }, "<")
+  .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
+  .to(".iglesia-old", { scale: 1 , xPercent: 0, yPercent: 5}, "<")
+  ;
+
+function shot(foto, fotoRed, bgColor) {
+  let tl = gsap.timeline({
+    defaults: {duration: 0.05, transformOrigin: "center center", easy: "none"}
+  });
+  tl.to(".old-container", {scale: 0.9, skewX: "3deg", yoyo: true, repeat: 1}, "<")
+    .to(".old", {backgroundColor: "#f73868"}, "<")
+    .to(fotoRed, {autoAlpha: 1}, "<")
+    .to(".old", {backgroundColor: bgColor, duration: 3, ease: "power2.out"}, "+=0.5")
+    .to(foto, {autoAlpha: 0, duration: 3, ease: "power2.out"}, "<")
+    .to(fotoRed, { autoAlpha: 0, yPercent: 2, duration: 3.2, ease: "power2.out" }, "<-0.2")
+    .addPause()
+  return tl;
+}
+
+let shots = gsap.timeline({
+  paused: true
+}).to(".border", { stroke: "#faf7f0", duration: 0, ease: "power2.out" })
+  .add(shot(".old-3", ".old-3-red", "#fdd8e1"))
+  .addPause()
+  .add(shot(".old-4", ".old-4-red", "#fcb1c3"))
+  .addPause()
+  .add(shot(".old-1", ".old-1-red", "#fa89a6"))
+  .addPause()
+  .add(shot(".old-5", ".old-5-red", "#f86288"))
+  .addPause()
+  .add(shot(".old-2", ".old-2-red", "#f73868"))
+  .addPause()
+
 ;
+
+
 
 gsap.to(".guzman-back.new", {
   yPercent: 40,

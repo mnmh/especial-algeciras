@@ -13,7 +13,7 @@
   <!-- Fonts  -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
 
   <!-- Site style  -->
@@ -84,7 +84,7 @@
 
     <div class="context">
       <div class="context-map">
-        <svg xmlns="http://www.w3.org/2000/svg" class="location-pin" width="100%" height="100%" viewBox="0 0 24 40">
+        <svg class="location-pin" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 40">
           <path
             d="M12 0A12 12 0 000 13c0 11 12 27 12 27s12-16 12-27A12 12 0 0012 0zm0 19a7 7 0 01-7-6 7 7 0 016-7 7 7 0 018 6v1a7 7 0 01-7 6z" />
         </svg>
@@ -132,57 +132,76 @@
     </div>
 
     <div class="old">
+      <div class="nav">
+        <button class="btn" id="next_btn">+</button>
+      </div>
       <div class="old-container">
-        <div class="explode-box">
-          <div id="explode-1"></div>
-          <div id="explode-2"></div>
-          <div id="explode-3"></div>
-          <div id="explode-4"></div>
-        </div>
-        <div class="old-box">
+        
+        <div class="iglesia-old-box">
+          <div class="shot shot-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+              stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
           <svg class="iglesia-old" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="100%" height="100%" viewBox="0 0 1070 1130">
+            viewBox="0 0 1070 1130">
             <defs>
-              <pattern id="prefix__c" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1201 807">
+              <pattern id="prefix__c" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1201 807">
                 <image width="1201" height="807" xlink:href="images/ruinas-4.jpg" />
               </pattern>
-              <pattern id="prefix__f" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1201 1063">
+              <pattern id="prefix__d" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1201 1063">
                 <image width="1201" height="1063" xlink:href="images/ruinas-3.jpg" />
               </pattern>
-              <pattern id="prefix__e" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1199 1244">
+              <pattern id="prefix__e" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1199 1244">
                 <image width="1199" height="1244" xlink:href="images/ruinas-2.jpg" />
               </pattern>
-              <pattern id="prefix__d" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 830">
+              <pattern id="prefix__f" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 830">
                 <image width="1200" height="830" xlink:href="images/ruinas-1.jpg" />
               </pattern>
-              <pattern id="prefix__g" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 651">
+              <pattern id="prefix__g" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 651">
                 <image width="1200" height="651" xlink:href="images/old-5.jpg" />
               </pattern>
-              <pattern id="prefix__h" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 651">
+              <pattern id="prefix__h" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 651">
                 <image width="1200" height="651" xlink:href="images/old-5-red.jpg" />
               </pattern>
-              <pattern id="prefix__i" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 1167">
+              <pattern id="prefix__i" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 1167">
                 <image width="1200" height="1167" xlink:href="images/old-4.jpg" />
               </pattern>
-              <pattern id="prefix__j" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 1167">
+              <pattern id="prefix__j" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 1167">
                 <image width="1200" height="1167" xlink:href="images/old-4-red.jpg" />
               </pattern>
-              <pattern id="prefix__k" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 825">
+              <pattern id="prefix__k" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 825">
                 <image width="1200" height="825" xlink:href="images/old-3.jpg" />
               </pattern>
-              <pattern id="prefix__l" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 825">
+              <pattern id="prefix__l" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 825">
                 <image width="1200" height="825" xlink:href="images/old-3-red.jpg" />
               </pattern>
-              <pattern id="prefix__m" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 805">
+              <pattern id="prefix__m" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 805">
                 <image width="1200" height="805" xlink:href="images/old-2.jpg" />
               </pattern>
-              <pattern id="prefix__n" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 805">
+              <pattern id="prefix__n" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 805">
                 <image width="1200" height="805" xlink:href="images/old-2-red.jpg" />
               </pattern>
-              <pattern id="prefix__o" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 804">
+              <pattern id="prefix__o" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 804">
                 <image width="1200" height="804" xlink:href="images/old-1.jpg" />
               </pattern>
-              <pattern id="prefix__p" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1200 804">
+              <pattern id="prefix__p" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
+                viewBox="0 0 1200 804">
                 <image width="1200" height="804" xlink:href="images/old-1-red.jpg" />
               </pattern>
               <clipPath id="prefix__b">
@@ -192,109 +211,157 @@
               </clipPath>
             </defs>
             <g clip-path="url(#prefix__b)">
-              <g class="debris-fotos">
-                <g class="debris debris-4" transform="translate(120.225 491.363)">
-                  <g class="border" fill="#faf7f0" stroke="#44303c">
-                    <rect width="534.251" height="372.456" rx="8" stroke="none" />
-                    <rect x=".5" y=".5" width="533.251" height="371.456" rx="7.5" fill="none" />
+              <g>
+                <g class="ruinas ruinas-4">
+                  <g transform="translate(127 498)" fill="#faf7f0" stroke="#44303c">
+                    <rect width="520.973" height="359.248" rx="8" stroke="none" />
+                    <rect x=".5" y=".5" width="519.973" height="358.248" rx="7.5" fill="none" />
                   </g>
-                  <rect width="493.186" height="331.392" rx="4" transform="translate(20.532 20.532)"
-                    fill="url(#prefix__c)" />
+                  <rect width="492.973" height="331.248" rx="4" transform="translate(141 512)" fill="url(#prefix__c)" />
                 </g>
-                <g class="debris debris-3" transform="translate(160.774 396.346)">
-                  <g class="border" fill="#faf7f0" stroke="#44303c">
-                    <rect width="416.963" height="372.735" rx="8" stroke="none" />
-                    <rect x=".5" y=".5" width="415.963" height="371.735" rx="7.5" fill="none" />
+                <g class="ruinas ruinas-3">
+                  <g transform="translate(163 398)" fill="#faf7f0" stroke="#44303c">
+                    <rect width="412.747" height="368.538" rx="8" stroke="none" />
+                    <rect x=".5" y=".5" width="411.747" height="367.538" rx="7.5" fill="none" />
                   </g>
-                  <rect width="384.913" height="340.685" rx="4" transform="translate(16.025 16.025)"
-                    fill="url(#prefix__f)" />
+                  <rect width="384.747" height="340.538" rx="4" transform="translate(177 412)" fill="url(#prefix__d)" />
                 </g>
-                <g class="debris debris-2" transform="translate(310.396 250.682)">
-                  <g class="border" fill="#faf7f0" stroke="#44303c">
-                    <rect width="435.26" height="450.338" rx="8" stroke="none" />
-                    <rect x=".5" y=".5" width="434.26" height="449.338" rx="7.5" fill="none" />
+                <g class="ruinas ruinas-2">
+                  <g transform="translate(313 254)" fill="#faf7f0" stroke="#44303c">
+                    <rect width="429.579" height="444.65" rx="8" stroke="none" />
+                    <rect x=".5" y=".5" width="428.579" height="443.65" rx="7.5" fill="none" />
                   </g>
-                  <rect width="401.753" height="416.831" rx="4" transform="translate(16.754 16.754)"
-                    fill="url(#prefix__e)" />
+                  <rect width="401.579" height="416.65" rx="4" transform="translate(327 268)" fill="url(#prefix__e)" />
                 </g>
-                <g class="debris debris-1" transform="translate(453.478 557.977)">
-                  <g class="border" transform="translate(-.478 .024)" fill="#faf7f0" stroke="#44303c">
-                    <rect width="487" height="348" rx="8" stroke="none" />
-                    <rect x=".5" y=".5" width="486" height="347" rx="7.5" fill="none" />
+                <g class="ruinas ruinas-1">
+                  <g transform="translate(458 562)" fill="#faf7f0" stroke="#44303c">
+                    <rect width="477" height="338" rx="8" stroke="none" />
+                    <rect x=".5" y=".5" width="476" height="337" rx="7.5" fill="none" />
                   </g>
-                  <rect width="449" height="311" rx="4" transform="translate(18.522 18.024)" fill="url(#prefix__d)" />
+                  <rect width="449" height="310" rx="4" transform="translate(472 576)" fill="url(#prefix__f)" />
                 </g>
               </g>
-              <g class="old-fotos">
-                <g class="foto old-5" transform="translate(90 623.486)">
-                  <rect width="872" height="492" rx="8" transform="translate(.001 -.486)" fill="#faf7f0" />
-                  <rect width="827" height="449" rx="4" transform="translate(20.001 19.514)" fill="url(#prefix__g)" />
+              <g class="fotos-old">
+                <g class="old-5">
+                  <rect width="872" height="485.87" rx="8" transform="translate(90 622)" fill="#faf7f0" />
+                  <rect width="844" height="457.87" rx="4" transform="translate(104 636)" fill="url(#prefix__g)" />
                 </g>
-                <g class="foto old-red old-5-red" transform="translate(90 623.486)">
-                  <rect width="872" height="492" rx="8" transform="translate(.001 -.486)" fill="#f73868" />
-                  <rect width="827" height="449" rx="4" transform="translate(20.001 19.514)" fill="url(#prefix__h)" />
+                <g class="old-red old-5-red">
+                  <rect width="872" height="485.87" rx="8" transform="translate(90 622)" fill="#f73868" />
+                  <rect width="844" height="457.87" rx="4" transform="translate(104 636)" fill="url(#prefix__h)" />
                 </g>
-                <g class="foto old-4" transform="translate(635 490)">
-                  <rect width="394" height="384" rx="8" fill="#faf7f0" />
-                  <rect width="374" height="364" rx="4" transform="translate(10 10)" fill="url(#prefix__i)" />
+                <g class="old-4">
+                  <rect width="394" height="382.392" rx="8" transform="translate(635 491)" fill="#faf7f0" />
+                  <rect width="366" height="354.392" rx="4" transform="translate(649 505)" fill="url(#prefix__i)" />
                 </g>
-                <g class="foto old-red old-4-red" transform="translate(635 490)">
-                  <rect width="394" height="384" rx="8" fill="#f73868" />
-                  <rect width="374" height="364" rx="4" transform="translate(10 10)" fill="url(#prefix__j)" />
+                <g class="old-red old-4-red">
+                  <rect width="394" height="382.391" rx="8" transform="translate(635 491)" fill="#f73868" />
+                  <rect width="366" height="354.391" rx="4" transform="translate(649 505)" fill="url(#prefix__j)" />
                 </g>
-                <g class="foto old-3" transform="translate(129 533.383)">
-                  <rect width="390" height="274" rx="8" transform="translate(0 -.383)" fill="#faf7f0" />
-                  <rect width="372" height="255" rx="4" transform="translate(9 9.617)" fill="url(#prefix__k)" />
+                <g class="old-3">
+                  <rect width="390" height="276.875" rx="8" transform="translate(129 533)" fill="#faf7f0" />
+                  <rect width="362" height="248.875" rx="4" transform="translate(143 547)" fill="url(#prefix__k)" />
                 </g>
-                <g class="foto old-red old-3-red" transform="translate(129 533.383)">
-                  <rect width="390" height="274" rx="8" transform="translate(0 -.383)" fill="#f73868" />
-                  <rect width="372" height="255" rx="4" transform="translate(9 9.617)" fill="url(#prefix__l)" />
+                <g class="old-red old-3-red">
+                  <rect width="390" height="276.875" rx="8" transform="translate(129 533)" fill="#f73868" />
+                  <rect width="362" height="248.875" rx="4" transform="translate(143 547)" fill="url(#prefix__l)" />
                 </g>
-                <g class="foto old-2" transform="translate(329 368.486)">
-                  <rect width="439" height="302" rx="8" transform="translate(0 -.486)" fill="#faf7f0" />
-                  <rect width="419" height="282" rx="4" transform="translate(10 9.514)" fill="url(#prefix__m)" />
+                <g class="old-2">
+                  <rect width="439" height="303.712" rx="8" transform="translate(329 368)" fill="#faf7f0" />
+                  <rect width="411" height="275.712" rx="4" transform="translate(343 382)" fill="url(#prefix__m)" />
                 </g>
-                <g class="foto old-red old-2-red" transform="translate(329 368.486)">
-                  <rect width="439" height="302" rx="8" transform="translate(0 -.486)" fill="#f73868" />
-                  <rect width="419" height="282" rx="4" transform="translate(10 9.514)" fill="url(#prefix__n)" />
+                <g class="old-red old-2-red">
+                  <rect width="439" height="303.712" rx="8" transform="translate(329 368)" fill="#f73868" />
+                  <rect width="411" height="275.712" rx="4" transform="translate(343 382)" fill="url(#prefix__n)" />
                 </g>
-                <g class="foto old-1" transform="translate(289 126)">
-                  <rect width="413" height="283" rx="8" fill="#faf7f0" />
-                  <rect width="392" height="263" rx="4" transform="translate(10 10)" fill="url(#prefix__o)" />
+                <g class="old-1">
+                  <rect width="413" height="286.303" rx="8" transform="translate(292 126)" fill="#faf7f0" />
+                  <rect width="385" height="258.303" rx="4" transform="translate(306 140)" fill="url(#prefix__o)" />
                 </g>
-                <g class="foto old-red old-1-red" transform="translate(289 126)">
-                  <rect width="413" height="283" rx="8" fill="#f73868" />
-                  <rect width="392" height="263" rx="4" transform="translate(10 10)" fill="url(#prefix__p)" />
+                <g class="old-red old-1-red">
+                  <rect width="413" height="286.304" rx="8" transform="translate(289 126)" fill="#f73868" />
+                  <rect width="385" height="258.304" rx="4" transform="translate(303 140)" fill="url(#prefix__p)" />
                 </g>
               </g>
             </g>
-            <g class="border lines" fill="none" stroke="#44303c">
+            <g class="border lines" transform="translate(23.663 136.5)" fill="none" stroke="#44303c">
+              <path d="M448.731 201.849h21.363v-10.325s-5.814-12.361-10.564-12.387-10.8 12.387-10.8 12.387z" />
+              <path d="M528.054 201.619h20.926v-10.118s-5.693-12.109-10.348-12.134-10.578 12.134-10.578 12.134z" />
               <path
-                d="M472.394 338.349h21.363v-10.325s-5.814-12.361-10.564-12.387-10.8 12.387-10.8 12.387zM551.717 338.119h20.926v-10.118s-5.693-12.109-10.348-12.134-10.578 12.134-10.578 12.134zM476.532 684.721h117.719v-49.285c0-24.615-40.445-78.016-62.942-78.016-19.581 0-54.776 45.494-54.776 78.016zM255.221 899.513h74.828s-1.131-27.083-1.45-59c-.312-29.492-22.446-53.529-37.947-57.9-11.64 3.362-34.294 19.756-35.431 57.9-.715 36.512 0 59 0 59zM740.402 898.969h74.131s-1.119-26.831-1.436-58.45c-.31-29.218-22.237-53.032-37.595-57.365-11.531 3.331-33.975 19.572-35.1 57.365-.709 36.172 0 58.45 0 58.45zM512.57 266.265h17.334v-8.38s-4.717-10.03-8.57-10.051-8.764 10.051-8.764 10.051z" />
+                d="M452.869 548.221h117.719v-49.285c0-24.615-40.445-78.016-62.942-78.016-19.581 0-54.776 45.494-54.776 78.016z" />
               <path
-                d="M466.133 695.966h138.518v-57.993c0-28.964-47.591-91.8-74.062-91.8-23.041 0-64.455 53.532-64.455 91.8zM730.203 911.97h94.615s-1.429-34.245-1.834-74.6c-.394-37.291-28.38-67.685-47.98-73.216-14.719 4.25-43.362 24.98-44.8 73.216-.906 46.165-.001 74.6-.001 74.6zM245.075 912.428h95.2s-1.439-34.458-1.846-75.063c-.4-37.521-28.558-68.1-48.279-73.669-14.809 4.277-43.631 25.135-45.077 73.669-.907 46.452.002 75.063.002 75.063zM467.079 343.002h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551zM546.183 343.002h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551zM507.807 270.331h26.861v-12.987s-7.31-15.543-13.281-15.576-13.58 15.576-13.58 15.576zM23.663 931h1023.4M899.712 742.5h108.3M163.5 753.5h-108M994.712 727.5v114M70.5 734.5v150M504.173 198.5v-18.951M509.753 185.132h-27.915M486.303 156.5v33.099M509.753 160.684h-31.265M505.406 145.5v16.184M499.71 140.119h37.895M535.211 136.5v25.184M557.611 159.5h-27M551.081 153.868V188.5M557.111 185h-23M537.679 179.549l-.07 21.951M532.613 195.5l44 51" />
+                d="M231.558 763.013h74.828s-1.131-27.083-1.45-59c-.312-29.492-22.446-53.529-37.947-57.9-11.64 3.362-34.294 19.756-35.431 57.9-.715 36.512 0 59 0 59z" />
+              <path
+                d="M716.739 762.469h74.131s-1.119-26.831-1.436-58.45c-.31-29.218-22.237-53.032-37.595-57.365-11.531 3.331-33.975 19.572-35.1 57.365-.709 36.172 0 58.45 0 58.45z" />
+              <path d="M488.907 129.765h17.334v-8.38s-4.717-10.03-8.57-10.051-8.764 10.051-8.764 10.051z" />
+              <path
+                d="M442.47 559.466h138.518v-57.993c0-28.964-47.591-91.8-74.062-91.8-23.041 0-64.455 53.532-64.455 91.8z" />
+              <path
+                d="M706.54 775.47h94.615s-1.429-34.245-1.834-74.6c-.394-37.291-28.38-67.685-47.98-73.216-14.719 4.25-43.362 24.98-44.8 73.216-.906 46.165-.001 74.6-.001 74.6z" />
+              <path
+                d="M221.412 775.928h95.2s-1.439-34.458-1.846-75.063c-.4-37.521-28.558-68.1-48.279-73.669-14.809 4.277-43.631 25.135-45.077 73.669-.907 46.452.002 75.063.002 75.063z" />
+              <path d="M443.416 206.502h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551z" />
+              <path d="M522.52 206.502h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551z" />
+              <path d="M484.144 133.831h26.861v-12.987s-7.31-15.543-13.281-15.576-13.58 15.576-13.58 15.576z" />
+              <path d="M0 794.5h1023.4" />
+              <path d="M876.049 606h108.3" />
+              <line x1="108" transform="translate(31.837 617)" />
+              <line y2="114" transform="translate(971.049 591)" />
+              <line y2="150" transform="translate(46.837 598)" />
+              <line y1="18.951" transform="translate(480.51 43.049)" />
+              <line x1="27.915" transform="translate(458.175 48.632)" />
+              <line y2="33.099" transform="translate(462.64 20)" />
+              <line x1="31.265" transform="translate(454.825 24.184)" />
+              <line y2="16.184" transform="translate(481.743 9)" />
+              <line x2="37.895" transform="translate(476.047 3.619)" />
+              <line y2="25.184" transform="translate(511.548)" />
+              <line x1="27" transform="translate(506.948 23)" />
+              <line y2="34.632" transform="translate(527.418 17.368)" />
+              <line x1="23" transform="translate(510.448 48.5)" />
+              <line x1=".07" y2="21.951" transform="translate(513.946 43.049)" />
+              <line x2="44" y2="51" transform="translate(508.95 59)" />
             </g>
-            <g class="border border-5" transform="translate(90 622)" fill="none" stroke="#44303c">
-              <rect width="872" height="493" rx="8" stroke="none" />
-              <rect x=".5" y=".5" width="871" height="492" rx="7.5" />
-            </g>
-            <g class="border border-4" transform="translate(635 490)" fill="none" stroke="#44303c">
-              <rect width="394" height="384" rx="8" stroke="none" />
-              <rect x=".5" y=".5" width="393" height="383" rx="7.5" />
-            </g>
-            <g class="border border-3" transform="translate(129 533)" fill="none" stroke="#44303c">
-              <rect width="390" height="274" rx="8" stroke="none" />
-              <rect x=".5" y=".5" width="389" height="273" rx="7.5" />
-            </g>
-            <g class="border border-2" transform="translate(329 368)" fill="none" stroke="#44303c">
-              <rect width="439" height="302" rx="8" stroke="none" />
-              <rect x=".5" y=".5" width="438" height="301" rx="7.5" />
-            </g>
-            <g class="border border-1" transform="translate(289 126)" fill="none" stroke="#44303c">
-              <rect width="413" height="283" rx="8" stroke="none" />
-              <rect x=".5" y=".5" width="412" height="282" rx="7.5" />
+            <g class="borders">
+              <g class="border border-5">
+                <g transform="translate(90 622)" fill="none" stroke="#44303c">
+                  <rect width="872" height="485.87" rx="8" stroke="none" />
+                  <rect x=".5" y=".5" width="871" height="484.87" rx="7.5" />
+                </g>
+              </g>
+              <g class="border border-4">
+                <g transform="translate(635 491)" fill="none" stroke="#44303c">
+                  <rect width="394" height="382.39" rx="8" stroke="none" />
+                  <rect x=".5" y=".5" width="393" height="381.39" rx="7.5" />
+                </g>
+              </g>
+              <g class="border border-3">
+                <g transform="translate(129 533)" fill="none" stroke="#44303c">
+                  <rect width="390" height="276.88" rx="8" stroke="none" />
+                  <rect x=".5" y=".5" width="389" height="275.88" rx="7.5" />
+                </g>
+              </g>
+              <g class="border border-2">
+                <g transform="translate(329 368)" fill="none" stroke="#44303c">
+                  <rect width="439" height="303.71" rx="8" stroke="none" />
+                  <rect x=".5" y=".5" width="438" height="302.71" rx="7.5" />
+                </g>
+              </g>
+              <g class="border border-1">
+                <g transform="translate(292 126)" fill="none" stroke="#44303c">
+                  <rect width="413" height="286.3" rx="8" stroke="none" />
+                  <rect x=".5" y=".5" width="412" height="285.3" rx="7.5" />
+                </g>
+              </g>
             </g>
           </svg>
+        </div>
+        <div class="fecha">
+          <div class="dia">
+            Martes<br>27<span>de</span>julio
+          </div>
+          <div class="anno">
+            2001
+          </div>
         </div>
       </div>
     </div>
@@ -362,7 +429,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
   <!-- Main -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
 
 </body>
 
