@@ -1,0 +1,194 @@
+<svg class="iglesia-old" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 1070 1130">
+  <defs>
+    <pattern id="old__c" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1201 807">
+      <image width="1201" height="807" xlink:href="images/ruinas-4.jpg" />
+    </pattern>
+    <pattern id="old__d" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1201 1063">
+      <image width="1201" height="1063" xlink:href="images/ruinas-3.jpg" />
+    </pattern>
+    <pattern id="old__e" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1199 1244">
+      <image width="1199" height="1244" xlink:href="images/ruinas-2.jpg" />
+    </pattern>
+    <pattern id="old__f" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 830">
+      <image width="1200" height="830" xlink:href="images/ruinas-1.jpg" />
+    </pattern>
+    <pattern id="old__g" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 651">
+      <image width="1200" height="651" xlink:href="images/old-5.jpg" />
+    </pattern>
+    <pattern id="old__h" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 651">
+      <image width="1200" height="651" xlink:href="images/old-5-red.jpg" />
+    </pattern>
+    <pattern id="old__i" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 1167">
+      <image width="1200" height="1167" xlink:href="images/old-4.jpg" />
+    </pattern>
+    <pattern id="old__j" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 1167">
+      <image width="1200" height="1167" xlink:href="images/old-4-red.jpg" />
+    </pattern>
+    <pattern id="old__k" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 825">
+      <image width="1200" height="825" xlink:href="images/old-3.jpg" />
+    </pattern>
+    <pattern id="old__l" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 825">
+      <image width="1200" height="825" xlink:href="images/old-3-red.jpg" />
+    </pattern>
+    <pattern id="old__m" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 805">
+      <image width="1200" height="805" xlink:href="images/old-2.jpg" />
+    </pattern>
+    <pattern id="old__n" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 805">
+      <image width="1200" height="805" xlink:href="images/old-2-red.jpg" />
+    </pattern>
+    <pattern id="old__o" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 804">
+      <image width="1200" height="804" xlink:href="images/old-1.jpg" />
+    </pattern>
+    <pattern id="old__p" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1200 804">
+      <image width="1200" height="804" xlink:href="images/old-1-red.jpg" />
+    </pattern>
+    <clipPath id="old__b">
+      <path
+        d="M791.423 984.41H0l21.935-190.345H764.11zm-29.751-207.335H23.893L59.211 470.6l-11.467-20.527v-10.451l171.923-42.411L226 265.223l-6.33-24.866h38.459l32.1-23.234v-72.646h5.837v-28.81h24.06L371.6 56.255V32.976h-18.88V19.209h18.88V0h14.52v19.209h16.822v13.767h-16.827v23.279l50.932 60.131h25.727l1.934 32.15h6.248l4.84 68.587 36.13 23.234h37.094l-6.871 19.318 15.07 132.894 170.59 40.181v6.872l-10.877 25.672 44.739 311.78zm-613.042-159.6c-14.961 4.319-43.635 25.267-45.077 73.637-.9 45.967-.009 74.746 0 75.031h95.2v-.072c-.148-3.656-1.459-36.821-1.841-74.96a79.726 79.726 0 00-4.937-26.546 89.592 89.592 0 00-11.955-22.251 83.525 83.525 0 00-15.579-16.262 47.792 47.792 0 00-15.808-8.578zm484.843.458c-14.869 4.291-43.367 25.109-44.8 73.183-.9 45.787-.009 74.286 0 74.569h94.616v-.075c-.147-3.636-1.45-36.617-1.829-74.494a79.243 79.243 0 00-4.908-26.383 89.052 89.052 0 00-11.881-22.114 83.023 83.023 0 00-15.482-16.161 47.5 47.5 0 00-15.71-8.525zM389.06 400.152c-5.512 0-12.356 3.1-19.792 8.958a116.01 116.01 0 00-21.077 22.577 143.552 143.552 0 00-16.756 29.749 101.787 101.787 0 00-5.007 15.55 67.121 67.121 0 00-1.824 14.925v57.968h138.519v-57.968c0-6.88-2.714-16.061-7.85-26.552a155.311 155.311 0 00-8.6-15.2 188.095 188.095 0 00-10.65-14.98c-7.909-10.049-16.283-18.609-24.218-24.757a63.56 63.56 0 00-11.957-7.511 26.17 26.17 0 00-10.788-2.759zM420.808 163.2c-1.622 0-3.48.976-5.523 2.9a38.757 38.757 0 00-5.219 6.374 85.913 85.913 0 00-5.41 9.269V197.2h31.991v-15.46a83.888 83.888 0 00-5.241-9.257 37.866 37.866 0 00-5.1-6.372c-2.008-1.924-3.849-2.9-5.472-2.913zm-79.1 0c-1.622 0-3.48.976-5.523 2.9a38.758 38.758 0 00-5.219 6.374 85.912 85.912 0 00-5.41 9.269V197.2h31.992v-15.46a84.076 84.076 0 00-5.242-9.257 37.878 37.878 0 00-5.1-6.372c-2.009-1.924-3.849-2.9-5.471-2.913zm38.133-67.16c-1.361 0-2.921.819-4.637 2.433a32.537 32.537 0 00-4.382 5.352 72.232 72.232 0 00-4.542 7.783v12.983h26.86v-12.982a70.746 70.746 0 00-4.4-7.773 31.791 31.791 0 00-4.285-5.35c-1.687-1.616-3.232-2.439-4.595-2.446z"
+        transform="translate(141.527 145.59)" fill="#faf7f0" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#old__b)">
+    <g>
+      <g class="ruinas ruinas-4">
+        <g transform="translate(127 498)" fill="#faf7f0" stroke="#44303c">
+          <rect width="520.973" height="359.248" rx="8" stroke="none" />
+          <rect x=".5" y=".5" width="519.973" height="358.248" rx="7.5" fill="none" />
+        </g>
+        <rect width="492.973" height="331.248" rx="4" transform="translate(141 512)" fill="url(#old__c)" />
+      </g>
+      <g class="ruinas ruinas-3">
+        <g transform="translate(163 398)" fill="#faf7f0" stroke="#44303c">
+          <rect width="412.747" height="368.538" rx="8" stroke="none" />
+          <rect x=".5" y=".5" width="411.747" height="367.538" rx="7.5" fill="none" />
+        </g>
+        <rect width="384.747" height="340.538" rx="4" transform="translate(177 412)" fill="url(#old__d)" />
+      </g>
+      <g class="ruinas ruinas-2">
+        <g transform="translate(313 254)" fill="#faf7f0" stroke="#44303c">
+          <rect width="429.579" height="444.65" rx="8" stroke="none" />
+          <rect x=".5" y=".5" width="428.579" height="443.65" rx="7.5" fill="none" />
+        </g>
+        <rect width="401.579" height="416.65" rx="4" transform="translate(327 268)" fill="url(#old__e)" />
+      </g>
+      <g class="ruinas ruinas-1">
+        <g transform="translate(458 562)" fill="#faf7f0" stroke="#44303c">
+          <rect width="477" height="338" rx="8" stroke="none" />
+          <rect x=".5" y=".5" width="476" height="337" rx="7.5" fill="none" />
+        </g>
+        <rect width="449" height="310" rx="4" transform="translate(472 576)" fill="url(#old__f)" />
+      </g>
+    </g>
+    <g class="fotos-old">
+      <g class="old-5">
+        <rect width="872" height="485.87" rx="8" transform="translate(90 622)" fill="#faf7f0" />
+        <rect width="844" height="457.87" rx="4" transform="translate(104 636)" fill="url(#old__g)" />
+      </g>
+      <g class="old-red old-5-red">
+        <rect width="872" height="485.87" rx="8" transform="translate(90 622)" fill="#f73868" />
+        <rect width="844" height="457.87" rx="4" transform="translate(104 636)" fill="url(#old__h)" />
+      </g>
+      <g class="old-4">
+        <rect width="394" height="382.392" rx="8" transform="translate(635 491)" fill="#faf7f0" />
+        <rect width="366" height="354.392" rx="4" transform="translate(649 505)" fill="url(#old__i)" />
+      </g>
+      <g class="old-red old-4-red">
+        <rect width="394" height="382.391" rx="8" transform="translate(635 491)" fill="#f73868" />
+        <rect width="366" height="354.391" rx="4" transform="translate(649 505)" fill="url(#old__j)" />
+      </g>
+      <g class="old-3">
+        <rect width="390" height="276.875" rx="8" transform="translate(129 533)" fill="#faf7f0" />
+        <rect width="362" height="248.875" rx="4" transform="translate(143 547)" fill="url(#old__k)" />
+      </g>
+      <g class="old-red old-3-red">
+        <rect width="390" height="276.875" rx="8" transform="translate(129 533)" fill="#f73868" />
+        <rect width="362" height="248.875" rx="4" transform="translate(143 547)" fill="url(#old__l)" />
+      </g>
+      <g class="old-2">
+        <rect width="439" height="303.712" rx="8" transform="translate(329 368)" fill="#faf7f0" />
+        <rect width="411" height="275.712" rx="4" transform="translate(343 382)" fill="url(#old__m)" />
+      </g>
+      <g class="old-red old-2-red">
+        <rect width="439" height="303.712" rx="8" transform="translate(329 368)" fill="#f73868" />
+        <rect width="411" height="275.712" rx="4" transform="translate(343 382)" fill="url(#old__n)" />
+      </g>
+      <g class="old-1">
+        <rect width="413" height="286.303" rx="8" transform="translate(292 126)" fill="#faf7f0" />
+        <rect width="385" height="258.303" rx="4" transform="translate(306 140)" fill="url(#old__o)" />
+      </g>
+      <g class="old-red old-1-red">
+        <rect width="413" height="286.304" rx="8" transform="translate(289 126)" fill="#f73868" />
+        <rect width="385" height="258.304" rx="4" transform="translate(303 140)" fill="url(#old__p)" />
+      </g>
+    </g>
+  </g>
+  <g class="border lines" transform="translate(23.663 136.5)" fill="none" stroke="#44303c">
+    <path d="M448.731 201.849h21.363v-10.325s-5.814-12.361-10.564-12.387-10.8 12.387-10.8 12.387z" />
+    <path d="M528.054 201.619h20.926v-10.118s-5.693-12.109-10.348-12.134-10.578 12.134-10.578 12.134z" />
+    <path
+      d="M452.869 548.221h117.719v-49.285c0-24.615-40.445-78.016-62.942-78.016-19.581 0-54.776 45.494-54.776 78.016z" />
+    <path
+      d="M231.558 763.013h74.828s-1.131-27.083-1.45-59c-.312-29.492-22.446-53.529-37.947-57.9-11.64 3.362-34.294 19.756-35.431 57.9-.715 36.512 0 59 0 59z" />
+    <path
+      d="M716.739 762.469h74.131s-1.119-26.831-1.436-58.45c-.31-29.218-22.237-53.032-37.595-57.365-11.531 3.331-33.975 19.572-35.1 57.365-.709 36.172 0 58.45 0 58.45z" />
+    <path d="M488.907 129.765h17.334v-8.38s-4.717-10.03-8.57-10.051-8.764 10.051-8.764 10.051z" />
+    <path d="M442.47 559.466h138.518v-57.993c0-28.964-47.591-91.8-74.062-91.8-23.041 0-64.455 53.532-64.455 91.8z" />
+    <path
+      d="M706.54 775.47h94.615s-1.429-34.245-1.834-74.6c-.394-37.291-28.38-67.685-47.98-73.216-14.719 4.25-43.362 24.98-44.8 73.216-.906 46.165-.001 74.6-.001 74.6z" />
+    <path
+      d="M221.412 775.928h95.2s-1.439-34.458-1.846-75.063c-.4-37.521-28.558-68.1-48.279-73.669-14.809 4.277-43.631 25.135-45.077 73.669-.907 46.452.002 75.063.002 75.063z" />
+    <path d="M443.416 206.502h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551z" />
+    <path d="M522.52 206.502h31.992v-15.468s-8.706-18.512-15.817-18.551-16.175 18.551-16.175 18.551z" />
+    <path d="M484.144 133.831h26.861v-12.987s-7.31-15.543-13.281-15.576-13.58 15.576-13.58 15.576z" />
+    <path d="M0 794.5h1023.4" />
+    <path d="M876.049 606h108.3" />
+    <line x1="108" transform="translate(31.837 617)" />
+    <line y2="114" transform="translate(971.049 591)" />
+    <line y2="150" transform="translate(46.837 598)" />
+    <line y1="18.951" transform="translate(480.51 43.049)" />
+    <line x1="27.915" transform="translate(458.175 48.632)" />
+    <line y2="33.099" transform="translate(462.64 20)" />
+    <line x1="31.265" transform="translate(454.825 24.184)" />
+    <line y2="16.184" transform="translate(481.743 9)" />
+    <line x2="37.895" transform="translate(476.047 3.619)" />
+    <line y2="25.184" transform="translate(511.548)" />
+    <line x1="27" transform="translate(506.948 23)" />
+    <line y2="34.632" transform="translate(527.418 17.368)" />
+    <line x1="23" transform="translate(510.448 48.5)" />
+    <line x1=".07" y2="21.951" transform="translate(513.946 43.049)" />
+    <line x2="44" y2="51" transform="translate(508.95 59)" />
+  </g>
+  <g class="borders">
+    <g class="border border-5">
+      <g transform="translate(90 622)" fill="none" stroke="#44303c">
+        <rect width="872" height="485.87" rx="8" stroke="none" />
+        <rect x=".5" y=".5" width="871" height="484.87" rx="7.5" />
+      </g>
+    </g>
+    <g class="border border-4">
+      <g transform="translate(635 491)" fill="none" stroke="#44303c">
+        <rect width="394" height="382.39" rx="8" stroke="none" />
+        <rect x=".5" y=".5" width="393" height="381.39" rx="7.5" />
+      </g>
+    </g>
+    <g class="border border-3">
+      <g transform="translate(129 533)" fill="none" stroke="#44303c">
+        <rect width="390" height="276.88" rx="8" stroke="none" />
+        <rect x=".5" y=".5" width="389" height="275.88" rx="7.5" />
+      </g>
+    </g>
+    <g class="border border-2">
+      <g transform="translate(329 368)" fill="none" stroke="#44303c">
+        <rect width="439" height="303.71" rx="8" stroke="none" />
+        <rect x=".5" y=".5" width="438" height="302.71" rx="7.5" />
+      </g>
+    </g>
+    <g class="border border-1">
+      <g transform="translate(292 126)" fill="none" stroke="#44303c">
+        <rect width="413" height="286.3" rx="8" stroke="none" />
+        <rect x=".5" y=".5" width="412" height="285.3" rx="7.5" />
+      </g>
+    </g>
+  </g>
+</svg>
