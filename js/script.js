@@ -1,43 +1,43 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// if (history.scrollRestoration) {
-//   history.scrollRestoration = 'manual';
-// } else {
-//   window.onbeforeunload = function () {
-//       window.scrollTo(0, 0);
-//   }
-// }
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+} else {
+  window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+  }
+}
 
 ScrollTrigger.config({ limitCallbacks: true });
 
-var wavesurfer = WaveSurfer.create({
-  container: '#waveform',
-  responsive: true,
-  barWidth: 1,
-  barHeight: 1,
-  barGap: 2,
-  cursorWidth: 0,
-  dragSelection: true,
-  height: 50,
-  hideScrollbar: true,
-  interact: true,
-  normalize: true
-});
-wavesurfer.load('../images/MarioGuzman.mp3');
+// var wavesurfer = WaveSurfer.create({
+//   container: '#waveform',
+//   responsive: true,
+//   barWidth: 1,
+//   barHeight: 1,
+//   barGap: 2,
+//   cursorWidth: 0,
+//   dragSelection: true,
+//   height: 50,
+//   hideScrollbar: true,
+//   interact: true,
+//   normalize: true
+// });
+// wavesurfer.load('../images/MarioGuzman.mp3');
 
-const audio = document.querySelector('.playPause')
-const audioIcons = document.querySelectorAll('.audioIcon');
-audio.onclick = function () {
-  wavesurfer.playPause();
-  // audioIcons.forEach(x => x.classList.toggle('off'))
-  audioIcons.forEach(function(icon) {
-    if (icon.classList.contains('off')) {
-      icon.classList.remove('off');
-    } else {
-        icon.classList.add('off');
-    }
-  });
-};
+// const audio = document.querySelector('.playPause')
+// const audioIcons = document.querySelectorAll('.audioIcon');
+// audio.onclick = function () {
+//   wavesurfer.playPause();
+//   // audioIcons.forEach(x => x.classList.toggle('off'))
+//   audioIcons.forEach(function(icon) {
+//     if (icon.classList.contains('off')) {
+//       icon.classList.remove('off');
+//     } else {
+//         icon.classList.add('off');
+//     }
+//   });
+// };
 
 gsap.set(".ruinas, .old-red, .shot-old, .new-red", { autoAlpha: 0 });
 gsap.to(".attack", { autoAlpha: 0, scale: 0.8, duration: 0.5 });
@@ -149,6 +149,21 @@ gsap.from(".hero-dpto", {
   }
 });
 
+gsap.utils.toArray('.content-info').forEach((sec, i) => {
+  let news = gsap.timeline({
+    scrollTrigger: {
+      trigger: sec,
+      start: 'top 70%',
+      end: 'top 45%',
+      scrub: 2,
+    }
+  })
+    .from(sec.querySelectorAll('.content-info p'), {
+    yPercent: 100, 
+    ease: "power3.out"
+  });
+});
+
 ScrollTrigger.matchMedia({
   // desktop
   "(min-width: 800px)": function () {
@@ -172,18 +187,19 @@ ScrollTrigger.matchMedia({
       defaults: { ease: "power2.out" },
       scrollTrigger: {
         trigger: ".context",
-        start: "top 40%",
-        end: "bottom top",
+        start: "top 30%",
+        end: "bottom 73%",
         scrub: true,
         pin: ".context-map"
       }
     })
       .addLabel("map")
-      .from(".map-algeciras", { duration: 1, scale: 100, xPercent: -100, transformOrigin: "center center" })
-      .from(".map-huila", { duration: 0.5, scale: 40, transformOrigin: "center center" }, "map")
-      .from(".map-colombia", { duration: 0.4, scale: 40, transformOrigin: "center center" }, "map")
-      .from(".map-colombia", { duration: 0.4, fill: "#faf7f0" }, "ma+=0.35")
-      .from(".location-pin", { duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=1")
+      .from(".map-algeciras", { duration: 2, scale: 110, y: -160,  transformOrigin: "center center" })
+      .from(".map-huila", { duration: 1.5, scale: 40, xPercent: 120, transformOrigin: "center center" }, "map")
+      .from(".map-colombia", { duration: 1.2, scale: 40, transformOrigin: "center center" }, "map")
+      .from(".map-colombia", { duration: 1.2, fill: "#faf7f0" }, "map+=1")
+      .from(".location-pin", { duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=0.2")
+      .to({}, { duration: 0.2 })
     ;
   },
   
@@ -205,23 +221,23 @@ ScrollTrigger.matchMedia({
     });
 
     // Mapa Colombia
-    const tlMap = gsap.timeline({
-      defaults: { ease: "power2.out" },
-      scrollTrigger: {
-        trigger: ".context",
-        start: "top 40%",
-        end: "bottom 10%",
-        scrub: true,
-        pin: ".context-map"
-      }
-    })
-      .addLabel("map")
-      .from(".map-algeciras", { duration: 1, scale: 100, xPercent: -100, transformOrigin: "center center" })
-      .from(".map-huila", { duration: 0.5, scale: 40, transformOrigin: "center center" }, "map")
-      .from(".map-colombia", { duration: 0.4, scale: 40, transformOrigin: "center center" }, "map")
-      .from(".map-colombia", { duration: 0.4, fill: "#faf7f0" }, "ma+=0.35")
-      .from(".location-pin", { duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=1")
-    ;
+    // const tlMap = gsap.timeline({
+    //   defaults: { ease: "power2.out" },
+    //   scrollTrigger: {
+    //     trigger: ".context",
+    //     start: "top 20%",
+    //     end: "bottom 10%",
+    //     scrub: true,
+    //     pin: ".context-map"
+    //   }
+    // })
+    //   .addLabel("map")
+    //   .from(".map-algeciras", { duration: 1, scale: 100, xPercent: -100, transformOrigin: "center center" })
+    //   .from(".map-huila", { duration: 0.5, scale: 40, transformOrigin: "center center" }, "map")
+    //   .from(".map-colombia", { duration: 0.4, scale: 40, transformOrigin: "center center" }, "map")
+    //   .from(".map-colombia", { duration: 0.4, fill: "#faf7f0" }, "ma+=0.35")
+    //   .from(".location-pin", { duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=1")
+    // ;
   }
 });
 
@@ -236,7 +252,7 @@ gsap.to(".context-text blockquote", {
 });
 
 gsap.to(".context-text blockquote svg", {
-  yPercent: 120,
+  yPercent: 140,
   scrollTrigger: {
     trigger: ".context-text blockquote",
     start: "top 90%",
@@ -251,16 +267,6 @@ gsap.from(".context-text p", {
     trigger: ".context-text blockquote",
     start: "top 90%",
     end: "top top",
-    scrub: true
-  }
-});
-
-gsap.fromTo("h1 span", { yPercent: 100 }, {
-  yPercent: -25,
-  scrollTrigger: {
-    trigger: "h1 span",
-    start: "top 85%",
-    end: "bottom 20%",
     scrub: true
   }
 });
@@ -291,7 +297,7 @@ function shot(foto, fotoRed, attack, bgColor, prevShot, nextShot) {
     defaults: { duration: 0.05, transformOrigin: "center center", easy: "none" }
   })
     .to(prevShot, { autoAlpha: 0, padding: "1.5%", duration: 0.2, force3D: false}, "<0.05")
-    .to(".old-container", { scale: 0.9, skewX: "random(-2deg, 2deg)", yoyo: true, repeat: 1 }, "+=0.04")
+    .to(".old-container", { scale: 0.98, skewX: "random(-2deg, 2deg)", yoyo: true, repeat: 1 }, "-=0.1.5")
     .to(".old", { backgroundColor: "#715540" }, "<")
     .to(attack, { autoAlpha: 1, scale: 1, ease: "power4.out", duration: 1 }, "<")
     .to(fotoRed, { autoAlpha: 1 }, "<")
@@ -306,21 +312,19 @@ function shot(foto, fotoRed, attack, bgColor, prevShot, nextShot) {
 const shots = gsap.timeline({
   paused: true
 })
-  .to(".shot-3", { autoAlpha: 1, duration: 0.2 })
+  .to(".shot-1", { autoAlpha: 1, duration: 0.2 })
   .addPause()
-  .add(shot(".old-3, .border-3", ".old-3-red", ".attack-3", "#e3ddd9", ".shot-3", ".shot-4"))
+  .add(shot(".old-1, .border-1", ".old-1-red", ".attack-1", "#e3ddd9", ".shot-1", ".shot-2"))
+  .addPause()
+  .add(shot(".old-2, .border-2", ".old-2-red", ".attack-2", "#aa998c", ".shot-2", ".shot-3"))
+  .addPause()
+  .add(shot(".old-3, .border-3", ".old-3-red", ".attack-3", "#aa998c", ".shot-3", ".shot-4"))
   .to(".border", { stroke: "#bfd5d6", duration: 1, ease: "power2.out"}, ">-2.2")
   .addPause()
-  .add(shot(".old-4, .border-4", ".old-4-red", ".attack-4", "#aa998c", ".shot-4", ".shot-5"))
+  .add(shot(".old-4, .border-4", ".old-4-red", ".attack-4", "#8d7766", ".shot-4", ".shot-5"))
   .addPause()
-  .add(shot(".old-5, .border-5", ".old-5-red", ".attack-5", "#8d7766", ".shot-5", ".shot-1"))
-  .addPause()
-  .add(shot(".old-1, .border-1", ".old-1-red", ".attack-1", "#715540", ".shot-1"))
-  .to(".fecha", { color: "#bfd5d6", duration: 1, ease: "power2.out"}, "<")
-  .to(".old-2-red", { autoAlpha: 1, duration: 1 }, "<")
-  .to(".old-2, .border-2", { autoAlpha: 0, duration: 2, ease: "power2.out" }, "-=1")
-  .to(".old-2-red", { autoAlpha: 0, yPercent: 2, duration: 2.2, ease: "power2.out" }, "<-0.2")
-  .to(".arrow-box", { autoAlpha: 1, duration: 1 })
+  .add(shot(".old-5, .border-5", ".old-5-red", ".attack-5", "#715540", ".shot-5"))
+  .to(".arrow-box", { autoAlpha: 1, duration: 0.5 })
   .call(enableScroll)
   .addPause()
   ;
@@ -343,25 +347,35 @@ const fotoOld = gsap.timeline({
   .call(shotPlay)
   .call(disableScroll)
   .to({}, { duration: 2 })
-  .to(".attack", { autoAlpha: 0, scale: 0.5, ease: "power4out", duration: 1.5, delay: "random(0.5, 1)" })
-  .to(".ruinas-3", { autoAlpha: 1 })
-  .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1,ease: "power2.out" }, "<")
+  .to(".attack", { autoAlpha: 0, scale: 0.5, ease: "power4out", duration: 1, delay: "random(0.5, 1)" })
+  .to(".ruinas-3", { autoAlpha: 1 }, "-=0.5")
+  .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1 }, "<")
   .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
   .to(".ruinas-1", { autoAlpha: 1 }, "<")
-  .to(".iglesia-old", { xPercent: -20, yPercent: -25,duration: 1, ease: "power2.out" }, "<")
+  .to(".iglesia-old", { xPercent: -20, yPercent: -25,duration: 1 }, "<")
   .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
   .to(".ruinas-2", { autoAlpha: 1 }, "<")
-  .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration:1, ease: "power2.out" }, "<")
+  .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration:1 }, "<")
   .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
   .to(".ruinas-4", { autoAlpha: 1 }, "<")
-  .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration:1, ease: "power2.out" }, "<")
+  .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration:1 }, "<")
   .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
   .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
   .to(".iglesia-old", { autoAlpha: 0, delay: 0.5 })
-  .fromTo(".old-fixed", { autoAlpha: 0 }, { autoAlpha: 1 },"<-0.5")
+  .fromTo(".old-fixed", { autoAlpha: 0 }, { autoAlpha: 1 },"<-0.1")
   .to(".scrollArrow", { autoAlpha: 0, duration: 1 })
   .call(enableScroll)
-;
+  ;
+
+gsap.fromTo("h1 span", { yPercent: 100 }, {
+  yPercent: -25,
+  scrollTrigger: {
+    trigger: "h1 span",
+    start: "top 85%",
+    end: "bottom 20%",
+    scrub: true
+  }
+});
 
 gsap.to(".guzman-back.new", {
   yPercent: 40,
@@ -373,23 +387,13 @@ gsap.to(".guzman-back.new", {
   }
 });
 
-gsap.from(".guzman-info.new h2", {
-  yPercent: 50,
-  scrollTrigger: {
-    trigger: ".guzman-back.new",
-    start: "top 70%",
-    end: "top 10%",
-    scrub: true
-  }
-});
-
 gsap.from(".guzman-info.new p", {
   yPercent: 50,
   autoAlpha: 0,
   scrollTrigger: {
     trigger: ".guzman-back.new",
-    start: "top 30%",
-    end: "bottom 55%",
+    start: "top 50%",
+    end: "bottom 60%",
     scrub: true
   }
 });
@@ -529,9 +533,9 @@ function shotPlayNew() {
   }
 }
 
-gsap.set(".attack-new", { xPercent: "random(-80, 70)", yPercent: "random(-120, 100)", scale: "random(0.2, 0.6)" });
+gsap.set(".attack-new", { xPercent: "random(-150, 50)", yPercent: "random(-90, 65)", scale: "random(0.2, 0.6)" });
 gsap.set(".border-bomb", { autoAlpha: 0 });
-gsap.set(".old-new", { autoAlpha: 0 });
+// gsap.set(".old-new", { autoAlpha: 0 });
 gsap.set(".attack-new", { autoAlpha: 0 });
 gsap.set(".new-text", { autoAlpha: 0 });
 
@@ -560,8 +564,8 @@ const fotoNew = gsap.timeline({
     scrub: 0.5
   }
 })
-  .to(".old-new", { autoAlpha: 1, duration: 1 })
-  .to(".old-fixed", { autoAlpha: 0 },"<")
+  .from(".old-new", { autoAlpha: 0, duration: 1 })
+  .from(".old-fixed", { autoAlpha: 1 },"<")
   .from(".new-6, .border-new-6", { y: innerHeight + 200, ease:"power2.out" })
   .from(".new-5, .border-new-5", { y: innerHeight + 200, ease:"power2.out" }, ">")
   .from(".new-4, .border-new-4", { y: innerHeight + 200, ease:"power2.out" }, "-=0.15")

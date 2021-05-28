@@ -72,18 +72,18 @@ select {
 
 :root {
   --main-bg-color: #faf7f0;
-  --hero-bg-color: #bfd5d6;
+  --hero-bg-color: #8dc2ce;
   --font-size: 12pt;
   --stroke-desk: 1px;
   --stroke-mobile: 2px;
   --border-color: var(--main-color);
   --bomb: #5b4231;
-  --color-red: #715540;
+  --color-red: #59493e;
   --color-red4: #8d7766;
   --color-red3: #aa998c;
   --color-red2: #c6bbb3;
   --color-red1: #e3ddd9;
-  --guzman-back: #bfd5d6;
+  --guzman-back: var(--hero-bg-color);
   --hero-color: var(--color-red);
   --main-color: var(--color-red);
 }
@@ -92,7 +92,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: var(--font-size);
-  line-height: 1.4;
+  line-height: 1.8;
   letter-spacing: 0.5px;
   color: var(--main-color);
   background: var(--main-bg-color);
@@ -201,13 +201,12 @@ svg.scrollArrow {
   position: relative;
   background: var(--hero-bg-color);
   color: var(--hero-color);
-  margin-bottom: 12vh;
   padding-bottom: 10vh;
   border-radius: 0 0 20px 20px;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
 }
 .hero-letters_box {
   height: 100vh;
@@ -261,10 +260,11 @@ svg.scrollArrow {
 .hero-info {
   width: 80%;
   margin: auto;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 .hero-info-map {
   width: 100%;
+  font-size: calc(0.8vw + 0.6vh);
 }
 .mapa-algeciras {
   stroke: var(--main-bg-color);
@@ -278,10 +278,10 @@ svg.scrollArrow {
   margin: 0 auto 30px;
 }
 .hero-info-text {
-  width: 100%;
+  padding-top: 10px;
 }
 .hero-info-text div {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .hero-info-text :last-child {
   margin-bottom: 0;
@@ -289,32 +289,34 @@ svg.scrollArrow {
 .hero-info-text div div {
   display: block;
   font-family: "Noto Serif", serif;
-  font-size: 25pt;
-  line-height: 1;
+  font-size: 22pt;
+  line-height: 0.8;
   color: var(--main-bg-color);
 }
 .hero-info-text div div span {
   font-size: 18pt;
 }
 .context {
-  width: 95vw;
-  max-width: 1460px;
+  width: 85vw;
+  max-width: 1040px;
   margin: auto;
+  margin-top: -10%;
+  margin-bottom: 22vh;
   position: relative;
   z-index: 1;
-  border: solid 1px rgba(250, 247, 240, 0);
+  border: solid 1px var(--main-bg-color);
 }
 .context-text {
   position: relative;
   z-index: 10;
-  margin: 0 35% 0 5%;
+  margin: 0 5% 0 35%;
   width: 68%;
 }
 blockquote {
   font-family: "Noto Serif", serif;
   line-height: 1.2;
   font-style: italic;
-  font-size: calc(2vw + 1vh + 1vmin);
+  font-size: calc(0.8vw + 2.2vh);
   position: relative;
   z-index: 1;
   margin-bottom: 10vh;
@@ -337,8 +339,8 @@ blockquote svg {
 .context-map {
   position: absolute;
   z-index: 5;
-  top: -10%;
-  right: -25%;
+  top: -120%;
+  left: -25%;
   width: 60vw;
 }
 .location-pin {
@@ -350,16 +352,16 @@ blockquote svg {
 }
 .map-colombia {
   stroke: var(--hero-bg-color);
-  stroke-width: 3px;
+  stroke-width: 1px;
   fill: #fcfaf7;
 }
 .map-huila {
   fill: var(--main-bg-color);
   stroke: var(--hero-bg-color);
-  stroke-width: 4px;
+  stroke-width: 1px;
 }
 .map-algeciras {
-  fill: var(--color-red);
+  fill: var(--hero-bg-color);
 }
 h1 {
   font-size: calc(6vw + 5.5vh + 1vmin);
@@ -382,6 +384,80 @@ h1 span.mario {
   left: 10vw;
   top: 40vh;
   z-index: 1000;
+}
+
+.content-info {
+  max-width: 1040px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  margin-top: 10vh;
+}
+.content-info::after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.content-info p.capitular {
+  float: left;
+  width: 52%;
+  margin-right: 1%;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-right: 2%;
+  border-top: 1px solid var(--guzman-back);
+}
+.content-info p {
+  float: right;
+  width: 47%;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.content-info h2 {
+  float: right;
+  font-size: calc(2vw + 3vh);
+  line-height: 1;
+  display: inline-block;
+  width: 47%;
+  font-weight: 300;
+  color: var(--guzman-back);
+}
+.capitular::first-letter {
+  font-family: "Noto Serif", serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  float: left;
+  font-size: calc(2.5vw + 3vh);
+  line-height: 40px;
+  padding-top: 3px;
+  padding-right: 8px;
+  padding-left: 3px;
+  color: var(--guzman-back);
+}
+
+.content-junio {
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  margin-top: 12vh;
+  text-align: center;
+}
+.content-junio h3 {
+  font-size: calc(10vw + 8vh + 1vmin);
+  line-height: 1;
+  font-weight: 700;
+  text-transform: none;
+  color: var(--guzman-back);
+}
+.content-junio h3 span {
+  font-size: calc(5vw + 4vh + 1vmin);
+  font-weight: 100;
+  padding: 0 10px;
 }
 
 .waveform {
@@ -439,8 +515,6 @@ h1 span.mario {
 }
 .lines-fixed {
   stroke: #bfd5d6;
-  /* stroke: red;
-  stroke-width: 5px; */
 }
 .old-container {
   max-width: 1050px;
@@ -461,14 +535,15 @@ h1 span.mario {
   position: relative;
   z-index: 10;
   max-width: 100vw;
-  max-height: 94vh;
-  margin-top: -6vh;
+  max-height: 100vh;
+  margin-top: -5vh;
 }
 .iglesia-fixed {
   position: relative;
   z-index: 10;
   max-width: 100vw;
   max-height: 100vh;
+  margin-top: -5vh;
 }
 .border {
   stroke-width: 0.8px;
@@ -555,20 +630,24 @@ h1 span.mario {
   -webkit-animation: ripple 3s ease-out infinite 2s;
 }
 .shot-1 {
-  left: 41%;
-  top: 22%;
+  top: 18%;
+  left: 38%;
+}
+.shot-2 {
+  top: 30%;
+  left: 53%;
 }
 .shot-3 {
-  left: 28%;
-  top: 48%;
+  top: 43%;
+  left: 36%;
 }
 .shot-4 {
-  left: 64%;
-  top: 56%;
+  top: 52%;
+  left: 66%;
 }
 .shot-5 {
-  left: 40%;
   top: 72%;
+  left: 46%;
 }
 .attacks {
   z-index: 100;
@@ -580,6 +659,8 @@ h1 span.mario {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
+  cursor: pointer;
   /* mix-blend-mode: multiply; */
 }
 .attack:after {
@@ -589,8 +670,7 @@ h1 span.mario {
   height: 0;
   padding-bottom: 100%;
   background: rgba(91, 66, 49, 0.9);
-  /* mix-blend-mode: multiply; */
-  /* opacity: 0.9; */
+  opacity: 0.9;
   z-index: 8;
   border-radius: 60%;
   -moz-border-radius: 60%;
@@ -600,71 +680,50 @@ h1 span.mario {
 }
 .attack div {
   position: relative;
-  width: 58%;
-  margin-left: 8%;
+  width: 76%;
+  text-align: center;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.4;
   font-style: italic;
-  font-size: calc(1vw + 0.6vh);
+  font-size: calc(0.8vw + 0.6vh);
   color: var(--guzman-back);
   z-index: 10;
+  pointer-events: none;
+  cursor: pointer;
 }
+
 .attack-1 {
-  top: 22%;
-  left: 30%;
+  width: 18%;
+  top: 18%;
+  left: 31%;
+}
+.attack-2 {
+  width: 26%;
+  top: 26%;
+  left: 43%;
 }
 .attack-3 {
-  top: 38%;
-  left: 15%;
+  width: 24%;
+  top: 40%;
+  left: 26%;
 }
 .attack-4 {
-  top: 52%;
-  left: 52%;
+  width: 29%;
+  top: 47%;
+  left: 54%;
 }
 .attack-5 {
-  top: 70%;
-  left: 28%;
+  width: 31%;
+  top: 66%;
+  left: 33%;
 }
-.fecha {
-  font-family: "Noto Serif", serif;
-  position: absolute;
-  z-index: 5;
-  font-weight: 700;
-  margin: auto;
-  color: var(--main-bg-color);
-  transform-origin: center center;
-  top: 51%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  -o-transform: translateY(-50%) translateX(-50%);
-}
-.dia {
-  display: block;
-  font-size: calc(5vw + 5vh + 2vmin);
-  line-height: 0.9;
-}
-.dia span {
-  font-size: calc(3vw + 3vh + 1vmin);
-  font-weight: 400;
-}
-.anno {
-  display: block;
-  font-size: calc(10vw + 9vh + 2vmin);
-  line-height: 1;
-  font-weight: 600;
-}
-.anno span {
-  font-size: calc(3vw + 3vh + 1vmin);
-  font-weight: 400;
-}
+
 .ruinasLine {
   fill: none;
   stroke: var(--guzman-back);
   stroke-width: 0.6px;
 }
+
 .guzman-back {
   background: var(--guzman-back);
   width: 100vw;
@@ -696,13 +755,12 @@ h1 span.mario {
 }
 .guzman-info.new {
   margin-top: 5vh;
+  padding-top: 5vh;
 }
 .guzman-info p {
   width: 42%;
-  display: inline-block;
 }
 .guzman-info.new p {
-  margin-top: 6vh;
 }
 .guzman-info h2 {
   color: #513077;
@@ -720,8 +778,8 @@ h1 span.mario {
   background-size: cover;
   background-position: 60% top;
   background-repeat: no-repeat;
-  border-top: 1px solid var(--main-bg-color);
-  border-left: 1px solid var(--main-bg-color);
+  /* border-top: 1px solid var(--main-bg-color);
+  border-left: 1px solid var(--main-bg-color); */
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -757,7 +815,7 @@ h1 span.mario {
   width: 45%;
   position: absolute;
   z-index: 1;
-  top: -30%;
+  top: -55%;
 }
 .guzman-info.obra p.cristo-title {
   top: auto;
@@ -839,7 +897,7 @@ h1 span.mario {
 }
 .caido-box p {
   position: absolute;
-  width: 38%;
+  width: 45%;
   top: 8%;
   right: 15%;
 }
@@ -965,6 +1023,7 @@ button:focus {
   z-index: 10;
   max-width: 100vw;
   max-height: 100vh;
+  margin-top: -5vh;
 }
 .border-new {
   stroke: var(--bomb);
@@ -1009,27 +1068,32 @@ button:focus {
   /* font-family: "Noto Serif", serif; */
   position: absolute;
   z-index: 1000;
-  width: 80%;
-  font-size: calc(1vw + 1vh);
-  line-height: 1.5;
-  color: var(--main-bg-color);
   transform-origin: center center;
   top: 54%;
-  left: 50%;
+  left: 40%;
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   -moz-transform: translateY(-50%) translateX(-50%);
   -ms-transform: translateY(-50%) translateX(-50%);
   -o-transform: translateY(-50%) translateX(-50%);
 }
+.new-text p {
+  font-size: calc(0.6vw + 1vh);
+  line-height: 1.5;
+  color: var(--main-bg-color);
+  border-top: 1px solid var(--guzman-back);
+  padding-top: 20px;
+}
+
 .new-text span {
   display: block;
+  width: 95%;
   font-family: "Noto Serif", serif;
-  font-size: calc(3vw + 3vh + 1vmin);
+  font-size: calc(2vw + 2vh);
   letter-spacing: 4px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 1;
-  margin-left: -10px;
+  margin-bottom: 30px;
   color: var(--guzman-back);
 }
 .creditos {
@@ -1217,7 +1281,7 @@ img.logos {
   }
 
   .hero-info {
-    width: 80%;
+    width: 55%;
   }
 
   .hero-info-map {
@@ -1233,10 +1297,6 @@ img.logos {
     clear: both;
   }
 
-  .mapa-algeciras {
-    stroke-width: 2;
-  }
-
   .hero-info-text {
     width: 45%;
     float: right;
@@ -1250,19 +1310,19 @@ img.logos {
   }
 
   .context-text {
-    margin: 0 35% 0 10%;
-    width: 55%;
+    margin: 40% 0 0 35%;
+    width: 58%;
   }
   blockquote {
     line-height: 1.2;
     font-style: italic;
-    font-size: calc(1.5vw + 1vh + 1vmin);
+    font-size: calc(1.8vw + 1vh);
     margin-bottom: 15vh;
     padding-left: 6vw;
   }
   blockquote svg {
     top: -40%;
-    left: -8%;
+    left: -6%;
     width: 30%;
   }
   .context-text cite {
@@ -1270,16 +1330,16 @@ img.logos {
   }
 
   .context-map {
-    top: -35%;
-    right: 0;
-    width: 40vw;
+    top: -28%;
+    left: 0;
+    width: 45vw;
   }
 
   .map-colombia {
-    stroke-width: 2px;
+    stroke-width: 1px;
   }
   .map-huila {
-    stroke-width: 3px;
+    stroke-width: 1px;
   }
 
   h1 {
