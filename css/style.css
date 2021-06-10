@@ -224,6 +224,7 @@ svg.scrollArrow {
   justify-content: center;
   flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
+  mix-blend-mode: overlay;
 }
 .hero-letter {
   font-family: "Noto Serif", serif;
@@ -231,9 +232,10 @@ svg.scrollArrow {
   text-transform: uppercase;
   font-size: calc(5vw + 4vh + 2vmin);
   color: var(--main-bg-color);
-  /* mix-blend-mode: multiply; */
   margin-left: -5px;
   line-height: 1;
+  opacity: 0.8;
+  mix-blend-mode: overlay;
 }
 .hero-dpto {
   z-index: 5;
@@ -401,22 +403,6 @@ h1 span.mario {
   height: 0;
   clear: both;
 }
-.content-info p.capitular {
-  float: left;
-  width: 52%;
-  margin-right: 1%;
-  margin-top: 40px;
-  padding-top: 20px;
-  padding-right: 2%;
-  border-top: 1px solid var(--guzman-back);
-}
-.content-info p {
-  float: right;
-  width: 47%;
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
 .content-info h2 {
   float: right;
   font-size: calc(2vw + 3vh);
@@ -424,55 +410,126 @@ h1 span.mario {
   display: inline-block;
   width: 47%;
   font-weight: 300;
+  margin-bottom: 25px;
   color: var(--guzman-back);
 }
-.capitular::first-letter {
+.content-info span {
+  float: left;
+  width: 52%;
+  margin-right: 1%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--guzman-back);
+}
+.content-info p {
+  float: right;
+  width: 47%;
+}
+.content-info p:first-of-type {
+  float: left;
+  width: 52%;
+  margin-right: 1%;
+  padding-right: 2%;
+}
+.content-info p:first-of-type::first-letter {
   font-family: "Noto Serif", serif;
   font-weight: 300;
   text-transform: uppercase;
   float: left;
   font-size: calc(2.5vw + 3vh);
   line-height: 40px;
-  padding-top: 3px;
+  padding-top: 4px;
   padding-right: 8px;
   padding-left: 3px;
   color: var(--guzman-back);
 }
+
+.atentados {
+  position: relative;
+  width: 94vw;
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+.atentado {
+  /*width: 44%;*/
+  z-index: 4000;
+  border-top: 1px solid var(--color-red2);
+  border-bottom: 1px solid var(--color-red2);
+  padding: 0px 10px;
+  position: relative;
+}
+.atentado:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  width: calc(100% - 19px);
+  height: calc(100% + 26px);
+  border-left: 1px solid var(--color-red2);
+  border-right: 1px solid var(--color-red2);
+}
+/* .atentado img {
+  filter: sepia(30%) saturate(70%) opacity(0.9);
+  -webkit-filter: sepia(30%) saturate(70%) opacity(0.9);
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}*/
+.atentado:hover {
+  z-index: 5000;
+}
+/* .atentado:hover img {
+  filter: none;
+  -webkit-filter: none;
+}  */
 
 .content-junio {
   padding: 0 20px;
   position: relative;
   z-index: 10;
   margin: auto;
-  margin-top: 12vh;
+  margin-top: 25vh;
   text-align: center;
 }
 .content-junio h3 {
-  font-size: calc(10vw + 8vh + 1vmin);
+  font-size: 20vw;
   line-height: 1;
   font-weight: 700;
   text-transform: none;
   color: var(--guzman-back);
+  word-wrap: break-word;
 }
 .content-junio h3 span {
   font-size: calc(5vw + 4vh + 1vmin);
   font-weight: 100;
-  padding: 0 10px;
 }
 
 .waveform {
-  width: 95vw;
+  width: 80vw;
   margin: 0 auto;
+  padding: 2px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  border: 1px solid magenta;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(250, 247, 240, 0.9);
 }
 .playPause {
-  max-width: 50px;
-  height: 50px;
+  max-width: 45px;
+  height: 45px;
   flex-grow: 1;
   position: relative;
+  z-index: 20;
 }
 .audioIcon {
   cursor: pointer;
@@ -722,6 +779,11 @@ h1 span.mario {
   fill: none;
   stroke: var(--guzman-back);
   stroke-width: 0.6px;
+}
+
+.bloque {
+  margin-top: 10vh;
+  border: 1px solid green;
 }
 
 .guzman-back {

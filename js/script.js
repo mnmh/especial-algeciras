@@ -10,34 +10,51 @@ if (history.scrollRestoration) {
 
 ScrollTrigger.config({ limitCallbacks: true });
 
-// var wavesurfer = WaveSurfer.create({
-//   container: '#waveform',
-//   responsive: true,
-//   barWidth: 1,
-//   barHeight: 1,
-//   barGap: 2,
-//   cursorWidth: 0,
-//   dragSelection: true,
-//   height: 50,
-//   hideScrollbar: true,
-//   interact: true,
-//   normalize: true
-// });
-// wavesurfer.load('../images/MarioGuzman.mp3');
+var wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  responsive: true,
+  barWidth: 1,
+  barHeight: 1,
+  barGap: 2,
+  cursorWidth: 0,
+  dragSelection: true,
+  height: 35,
+  hideScrollbar: true,
+  interact: true,
+  normalize: true
+});
+wavesurfer.load('../images/MarioGuzman-1.mp3');
 
-// const audio = document.querySelector('.playPause')
-// const audioIcons = document.querySelectorAll('.audioIcon');
-// audio.onclick = function () {
-//   wavesurfer.playPause();
-//   // audioIcons.forEach(x => x.classList.toggle('off'))
-//   audioIcons.forEach(function(icon) {
-//     if (icon.classList.contains('off')) {
-//       icon.classList.remove('off');
-//     } else {
-//         icon.classList.add('off');
-//     }
-//   });
-// };
+function playAudio1() {
+  wavesurfer.playPause();
+}
+
+const audio = document.querySelector('.playPause')
+const audioIcons = document.querySelectorAll('.audioIcon');
+audio.onclick = function () {
+  playAudio1();
+  // audioIcons.forEach(x => x.classList.toggle('off'))
+  audioIcons.forEach(function(icon) {
+    if (icon.classList.contains('off')) {
+      icon.classList.remove('off');
+    } else {
+        icon.classList.add('off');
+    }
+  });
+};
+
+ScrollTrigger.create({
+  trigger: ".waveform",
+  start: "bottom bottom",
+  endTrigger: ".news2",
+  end: "bottom 60%",
+  pinSpacing: false,
+  pin: true,
+  onEnter: playAudio1,
+  onLeave: playAudio1,
+  onEnterBack: playAudio1,
+  onLeaveBack: playAudio1
+});
 
 gsap.set(".ruinas, .old-red, .shot-old, .new-red", { autoAlpha: 0 });
 gsap.to(".attack", { autoAlpha: 0, scale: 0.8, duration: 0.5 });
@@ -149,20 +166,36 @@ gsap.from(".hero-dpto", {
   }
 });
 
-gsap.utils.toArray('.content-info').forEach((sec, i) => {
-  let news = gsap.timeline({
-    scrollTrigger: {
-      trigger: sec,
-      start: 'top 70%',
-      end: 'top 45%',
-      scrub: 2,
-    }
-  })
-    .from(sec.querySelectorAll('.content-info p'), {
-    yPercent: 100, 
-    ease: "power3.out"
-  });
-});
+// let sections = gsap.utils.toArray('.paragraph');
+// sections.forEach((section) => {
+//   gsap.from(section, {
+//     autoAlpha: 0,
+//     yPercent: 100, 
+//     ease: "power3.out",
+//     scrollTrigger: {
+//       markers: true,
+//       trigger: section,
+//       start: 'top 70%',
+//       end: 'top 60%',
+//       scrub: 2
+//     }
+//   });
+// })
+
+// gsap.utils.toArray('p').forEach((sec, i) => {
+//   let news = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: sec,
+//       start: 'top 70%',
+//       end: 'top 45%',
+//       scrub: 2,
+//     }
+//   })
+//     .from(sec.querySelectorAll('p'), {
+//     yPercent: 100, 
+//     ease: "power3.out"
+//   });
+// });
 
 ScrollTrigger.matchMedia({
   // desktop
@@ -172,13 +205,14 @@ ScrollTrigger.matchMedia({
       yPercent: "random(-500, 10)",
       xPercent: "random(-750, 750)",
       scale: "random(2, 7)",
-      opacity: 1,
       force3D: false,
+      ease: "power2.out",
+      opacity: 0.6,
       scrollTrigger: {
         trigger: ".hero-letters_box",
         start: "top 5%",
         end: "90% 60%",
-        scrub: true
+        scrub: 1.5
       }
     });
 
@@ -271,12 +305,51 @@ gsap.from(".context-text p", {
   }
 });
 
+let atentadosOrder = document.querySelector(".atentados");
+for (let i = atentadosOrder.children.length; i >= 0; i--) {
+  atentadosOrder.appendChild(atentadosOrder.children[Math.random() * i | 0]);
+}
+
+document.querySelectorAll('.atentado:nth-child(odd)').forEach(atentadoOdd => {
+  gsap.set(atentadoOdd, { yPercent: "random(-50, 0)", xPercent: "random(-10, 20)", scale: "random(0.85, 1)" });
+  gsap.from(atentadoOdd, {
+    scrollTrigger: {
+      trigger: atentadoOdd,
+      start: "top 85%",
+      toggleActions: "play none none reverse"
+    },
+    autoAlpha: 0,
+    yPercent: 40,
+    xPercent: "random(-5, 5)",
+    scale: 0.8,
+    rotation: "random(-6, 6)",
+    transformOrigin: "center center",
+    duration: 1,
+    ease: "power2.out"
+  });
+})
+document.querySelectorAll('.atentado:nth-child(even)').forEach(atentadoEven => {
+  gsap.set(atentadoEven, { yPercent: "random(-40, 5)", xPercent: "random(-20, 10)", scale: "random(0.85, 1)" });
+  gsap.from(atentadoEven, {
+    scrollTrigger: {
+      trigger: atentadoEven,
+      start: "center 88h%",
+      toggleActions: "play none none reverse"
+    },
+    autoAlpha: 0,
+    yPercent: 40,
+    xPercent: "random(-5, 5)",
+    scale: 0.8,
+    rotation: "random(-6, 6)",
+    transformOrigin: "center center",
+    duration: 1,
+    ease: "power2.out"
+  });
+})
+
 let select = (selector) => {
   return document.querySelector(selector);
 };
-// let next_btn = select("#next_btn");
-// next_btn.addEventListener("click", () => shots.play());
-  
 document.querySelectorAll('.shot-old').forEach(item => {
   item.addEventListener('click', event => {
     shots.play();
