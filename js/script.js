@@ -10,6 +10,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({ limitCallbacks: true });
 
+
+// // Create an instance
+// let wavesurfer = {};
+
+// // Init & load audio file
+// document.addEventListener('DOMContentLoaded', function() {
+//     wavesurfer = WaveSurfer.create({
+//         container: document.querySelector('#waveform'),
+//         barWidth: 2,
+//         barHeight: 1,
+//         barGap: null
+//     });
+
+//     wavesurfer.on('error', function(e) {
+//         console.warn(e);
+//     });
+
+//     // Load audio from URL
+//     // wavesurfer.load('https://wavesurfer-js.org/example/media/demo.wav');
+//   // wavesurfer.load('https://ia802709.us.archive.org/32/items/GlenMiller-MoonlightSerenade/8a3748ab5a59.mp3');
+//   wavesurfer.load('http://museodememoria.gov.co/algeciras/images/MarioGuzman-1.mp3');
+  
+//   wavesurfer.on('ready', function () {
+//     wavesurfer.play();
+//     wavesurfer.pause();
+//   });
+
+// });
+
+
+
 // var wavesurfer = WaveSurfer.create({
 //   container: '#waveform',
 //   backend: 'MediaElement',
@@ -23,6 +54,7 @@ ScrollTrigger.config({ limitCallbacks: true });
 //   hideScrollbar: true,
 //   interact: true,
 //   normalize: true,
+//   waveColor: '#f90',
 //   progressColor: '#5b4231'
 // });
 // wavesurfer.load('images/MarioGuzman-1.mp3');
@@ -479,7 +511,7 @@ ScrollTrigger.matchMedia({
       .to(".old-new", { backgroundColor: "#715540", duration: "0.4" }, "newText")
       .to(".attack-new", { autoAlpha: 1, scale: "random(1, 1.8)", duration: "random(2, 4)" }, "newText")
       .to(".new-foto", { autoAlpha: 0, scale: "random(0.9, 0.7)", duration: "random(0.5, 0.8)", transformOrigin: "center center" }, "newText")
-      .to(".lines-new", { stroke: "#bfd5d6", duration: "0.4" }, "newText")
+      // .to(".lines-new", { stroke: "#bfd5d6", duration: "0.4" }, "newText")
       .fromTo(".new-text", { y: innerHeight + 600 }, { y: innerHeight - 550, duration: 2 }, "newText")
       .to({}, { duration: 1 })
     ;
@@ -767,50 +799,8 @@ ScrollTrigger.matchMedia({
       .to(".circle-attack-2", { scale: 2, opacity: 0, duration: 2 }, "bomb+=0.2")
     ;
     
-    let playNew_btn = select(".shot-new");
-    playNew_btn.addEventListener("click", clickNew);
-    
-    let shotNew = 1;
-    gsap.set(".shot-new", { autoAlpha: 0 });
-    
-    function clickNew(){
-      gsap.set(".shot-new", { autoAlpha: 0 });
-      shotsNew.play();
-      shotNew = 3;
-      active = true;
-    }
-    
-    function shotPlayNew() {
-      if (shotNew == 1) {
-        // shotsNew.play();
-        gsap.to(".shot-new", { autoAlpha: 1, duration: 0.2 });
-        shotNew = 2;
-      }else if (shotNew == 2) {
-        gsap.to(".shot-new", { autoAlpha: 0, duration: 0.2 });
-        shotNew = 1;
-      }
-    }
-    
-    gsap.set(".attack-new", { xPercent: "random(-150, 50)", yPercent: "random(-90, 65)", scale: "random(0.2, 0.6)" });
-    gsap.set(".border-bomb", { autoAlpha: 0 });
-    // gsap.set(".old-new", { autoAlpha: 0 });
+    gsap.set(".attack-new", { xPercent: "random(-80, 70)", yPercent: "random(-120, 100)", scale: "random(0.2, 0.6)" });
     gsap.set(".attack-new", { autoAlpha: 0 });
-    // gsap.set(".new-text", { autoAlpha: 0 });
-    
-    const shotsNew = gsap.timeline({
-      defaults: { duration: 0.02, transformOrigin: "center center" },
-      paused: true
-    })
-      .set(".shot-new", { autoAlpha: 0 } )
-      .to(".new-container", { scale: 0.9, skewX: "3deg", yoyo: true, repeat: 1 })
-      .to(".old-new", { backgroundColor: "#715540" }, "<")
-      .addLabel("newText")
-      .to(".new-text", { autoAlpha: 1, duration: 3, delay: 0.5 })
-      .to(".attack-new", { autoAlpha: 1, scale: "random(1, 1.8)", duration: "random(2, 4)" }, "newText")
-      .to(".new-red", { autoAlpha: 1, duration: 4 }, "newText")
-      .set(".new-foto, .border-new-mov", { autoAlpha: 0 })
-      .set(".border-bomb", { autoAlpha: 1 }, "<")
-      ;
     
     const fotoNew = gsap.timeline({
       scrollTrigger: {
@@ -833,7 +823,7 @@ ScrollTrigger.matchMedia({
       .to(".old-new", { backgroundColor: "#715540", duration: "0.4" }, "newText")
       .to(".attack-new", { autoAlpha: 1, scale: "random(1, 1.8)", duration: "random(2, 4)" }, "newText")
       .to(".new-foto", { autoAlpha: 0, scale: "random(0.9, 0.7)", duration: "random(0.5, 0.8)", transformOrigin: "center center" }, "newText")
-      .to(".lines-new", { stroke: "#bfd5d6", duration: "0.4" }, "newText")
+      // .to(".lines-new", { stroke: "#bfd5d6", duration: "0.4" }, "newText")
       .fromTo(".new-text", { y: innerHeight + 600 }, { y: innerHeight - 550, duration: 6 }, "newText")
       .to({}, { duration: 1 })
     ;
