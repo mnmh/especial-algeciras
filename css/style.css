@@ -72,7 +72,7 @@ select {
 
 :root {
   --main-bg-color: #faf7f0;
-  --hero-bg-color: #8dc2ce;
+  --hero-bg-color: #bfd5d6;
   --font-size: 12pt;
   --stroke-desk: 1px;
   --stroke-mobile: 2px;
@@ -90,9 +90,9 @@ select {
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: var(--font-size);
-  line-height: 1.8;
+  font-weight: 400;
+  font-size: calc(var(--font-size) + 1pt);
+  line-height: 1.5;
   letter-spacing: 0.5px;
   color: var(--main-color);
   background: var(--main-bg-color);
@@ -232,13 +232,15 @@ svg.scrollArrow {
   text-transform: uppercase;
   font-size: calc(5vw + 4vh + 2vmin);
   color: var(--main-bg-color);
-  margin-left: -5px;
+  margin: 0 -1px;
   line-height: 1;
   opacity: 0.8;
   mix-blend-mode: overlay;
 }
 .hero-dpto {
   z-index: 5;
+  font-size: calc(var(--font-size) * 1.6);
+  color: var(--color-red);
 }
 .hero-img {
   position: relative;
@@ -251,33 +253,60 @@ svg.scrollArrow {
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
+/* .hero-copy {
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  font-size: 9pt;
+  padding: 5px 10px;
+  background: rgba(250, 247, 240, 0.8);
+  color: var(--color-red);
+  text-align: right;
+  line-height: 1.2;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+} */
 .hero-img-copy {
-  font-size: 10pt;
-  margin: 10px 30px 0;
+  font-size: 9pt;
+  font-weight: 500;
+  margin: 5px 10px 0;
+  line-height: 1.4;
   color: var(--color-red);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+.hero-img-copy div:first-child {
+  margin-right: 40px;
+}
+.hero-img-copy div:last-child {
+  text-align: right;
+}
+.hero-img-copy span {
+  display: inline-block;
+  margin: 0 0 6px;
+}
+.hero-img-copy span:first-child {
+  display: block;
+}
 .hero-info {
-  width: 80%;
+  width: 85%;
   margin: auto;
   margin-top: 25vh;
 }
 .hero-info-map {
   width: 100%;
-  font-size: calc(0.8vw + 0.6vh);
+  margin-bottom: 2vh;
+  /* font-size: calc(0.8vw + 2vh); */
 }
 .mapa-algeciras {
   stroke: var(--main-bg-color);
   stroke-width: 4;
   fill: rgba(250, 247, 240, 0.1);
   margin-bottom: 20px;
-}
-.hero-info-map svg {
-  width: 90%;
-  display: block;
-  margin: 0 auto 30px;
 }
 .hero-info-text {
   padding-top: 10px;
@@ -298,11 +327,9 @@ svg.scrollArrow {
 .hero-info-text div div span {
   font-size: 18pt;
 }
+
 .context {
-  width: 85vw;
-  max-width: 1040px;
-  margin: auto;
-  margin-top: -10%;
+  width: 95vw;
   margin-bottom: 22vh;
   position: relative;
   z-index: 1;
@@ -311,24 +338,23 @@ svg.scrollArrow {
 .context-text {
   position: relative;
   z-index: 10;
-  margin: 0 5% 0 35%;
-  width: 68%;
+  margin: 30% 0 0 30%;
+  width: 70%;
 }
 blockquote {
   font-family: "Noto Serif", serif;
   line-height: 1.2;
   font-style: italic;
-  font-size: calc(0.8vw + 2.2vh);
-  position: relative;
+  font-size: calc(1.8vw + 2vh);
   z-index: 1;
   margin-bottom: 10vh;
-  padding-left: 5vw;
+  padding-left: 8vw;
 }
 blockquote svg {
   position: absolute;
   z-index: -1;
-  top: -40%;
-  left: -6%;
+  top: -30%;
+  left: -4%;
   width: 30%;
   fill: var(--hero-bg-color);
 }
@@ -336,14 +362,14 @@ blockquote svg {
   display: block;
   font-size: calc(var(--font-size) - 3pt);
   font-style: normal;
-  margin: 20px 0 0 10px;
+  margin: 20px 0 0 30px;
 }
 .context-map {
   position: absolute;
   z-index: 5;
-  top: -120%;
-  left: -25%;
-  width: 60vw;
+  top: -38%;
+  left: -5%;
+  width: 80vw;
 }
 .location-pin {
   fill: var(--color-red);
@@ -354,17 +380,18 @@ blockquote svg {
 }
 .map-colombia {
   stroke: var(--hero-bg-color);
-  stroke-width: 1px;
+  stroke-width: 3px;
   fill: #fcfaf7;
 }
 .map-huila {
   fill: var(--main-bg-color);
   stroke: var(--hero-bg-color);
-  stroke-width: 1px;
+  stroke-width: 3px;
 }
 .map-algeciras {
   fill: var(--hero-bg-color);
 }
+
 h1 {
   font-size: calc(6vw + 5.5vh + 1vmin);
   line-height: 0.9;
@@ -396,38 +423,27 @@ h1 span.mario {
   margin: auto;
   margin-top: 10vh;
 }
-.content-info::after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
 .content-info h2 {
-  float: right;
-  font-size: calc(2vw + 3vh);
+  font-size: calc(3vw + 4vh);
   line-height: 1;
   display: inline-block;
   width: 47%;
   font-weight: 300;
-  margin-bottom: 25px;
   color: var(--guzman-back);
 }
 .content-info span {
-  float: left;
-  width: 52%;
+  display: block;
   margin-right: 1%;
-  margin-top: 40px;
   margin-bottom: 30px;
   border-bottom: 1px solid var(--guzman-back);
 }
-.content-info p {
-  float: right;
-  width: 47%;
+.content-info p span {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 .content-info p:first-of-type {
-  float: left;
-  width: 52%;
   margin-right: 1%;
   padding-right: 2%;
 }
@@ -436,7 +452,7 @@ h1 span.mario {
   font-weight: 300;
   text-transform: uppercase;
   float: left;
-  font-size: calc(2.5vw + 3vh);
+  font-size: calc(4vw + 6vh);
   line-height: 40px;
   padding-top: 4px;
   padding-right: 8px;
@@ -447,18 +463,34 @@ h1 span.mario {
 .atentados {
   position: relative;
   width: 94vw;
-  max-width: 1800px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 1vh auto 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 5000;
 }
+.atentados-copy {
+  width: 100vw;
+  max-width: 1160px;
+  margin: 10vh auto 5vh;
+  text-align: center;
+}
+.atentados-copy svg {
+  width: 40px;
+  stroke: var(--guzman-back);
+}
+.atentados-copy p {
+  font-style: italic;
+  max-width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}
 .atentado {
-  /*width: 44%;*/
-  z-index: 4000;
+  margin-bottom: 8%;
   border-top: 1px solid var(--color-red2);
   border-bottom: 1px solid var(--color-red2);
   padding: 0px 10px;
@@ -484,9 +516,9 @@ h1 span.mario {
   -ms-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
 }*/
-.atentado:hover {
+/* .atentado:hover {
   z-index: 5000;
-}
+} */
 /* .atentado:hover img {
   filter: none;
   -webkit-filter: none;
@@ -501,7 +533,7 @@ h1 span.mario {
   text-align: center;
 }
 .content-junio h3 {
-  font-size: 20vw;
+  font-size: calc(14vw + 8vh);
   line-height: 1;
   font-weight: 700;
   text-transform: none;
@@ -543,8 +575,8 @@ h1 span.mario {
   -o-transition: all 250ms ease-in-out;
 }
 .audioIcon svg {
-  stroke: #000;
-  stroke-width: 0.5;
+  stroke: #5b4231;
+  stroke-width: 0.7;
   height: 70%;
   padding: 8px;
 }
@@ -562,6 +594,7 @@ h1 span.mario {
   background: var(--main-bg-color);
 }
 .old-fixed {
+  opacity: 0;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -636,7 +669,7 @@ h1 span.mario {
   position: absolute;
   z-index: 120;
   opacity: 0.9;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -796,7 +829,7 @@ h1 span.mario {
   height: 80vh;
 }
 .guzman-iglesia {
-  width: 50%;
+  width: 60%;
   max-width: 900px;
   height: 100%;
   position: absolute;
@@ -815,24 +848,31 @@ h1 span.mario {
   z-index: 10;
   margin: auto;
 }
+.guzman-info p.xMovil {
+  margin-top: 10vh;
+}
+.xDesk {
+  display: none;
+}
 .guzman-info.new {
-  margin-top: 5vh;
-  padding-top: 5vh;
+  margin-top: 0;
+  padding-top: 0;
 }
 .guzman-info p {
-  width: 42%;
+  width: 95%;
 }
 .guzman-info.new p {
+  width: 54%;
 }
 .guzman-info h2 {
   color: #513077;
 }
 .guzman-info.foto {
-  height: 50vh;
-  margin-top: 20vh;
+  height: 45vh;
+  margin-top: 10vh;
 }
 .guzman-foto {
-  width: 45%;
+  width: 60%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -848,42 +888,43 @@ h1 span.mario {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
-.guzman-info.foto p {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
 .guzman-info.foto h2 {
   text-transform: capitalize;
   color: var(--guzman-back);
-  font-size: calc(5vw + 4vh + 2vmin);
+  font-size: calc(5vw + 7vh);
   line-height: 0.66;
   position: absolute;
-  left: 6%;
-  bottom: -20%;
+  left: 10%;
+  bottom: -10%;
+}
+.guzman-text {
+  max-width: 1040px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin: 10vh auto 0;
+}
+.obra-box {
+  max-width: 1040px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  border: 1px solid rgba(250, 247, 240, 0);
+}
+.obra-text {
+  width: 80%;
 }
 .guzman-info.obra {
   position: relative;
   height: 40vh;
 }
-.guzman-info.obra::after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-.guzman-info.obra p {
-  width: 45%;
-  position: absolute;
-  z-index: 1;
-  top: -55%;
-}
 .guzman-info.obra p.cristo-title {
-  top: auto;
-  bottom: 25%;
+  position: absolute;
+  top: -50%;
   width: 40%;
-  margin-left: 15%;
+  left: 0;
+  right: 0;
   font-size: calc(var(--font-size) - 4pt);
   font-style: italic;
   z-index: 10;
@@ -893,10 +934,10 @@ h1 span.mario {
 .cristo {
   position: absolute;
   z-index: 5;
-  max-width: 60%;
+  max-width: 80%;
   max-height: 110vh;
-  right: 20px;
-  bottom: 0;
+  right: 0;
+  bottom: 40%;
 }
 .cristo img {
   position: absolute;
@@ -935,6 +976,23 @@ h1 span.mario {
   left: 0;
   z-index: 4;
 }
+.caido-text-box {
+  z-index: 10;
+  margin: auto;
+  background: var(--guzman-back);
+  padding: 40px 0 20px;
+}
+.caido-text {
+  max-width: 1040px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin: auto;
+}
+.caido-text p {
+  margin-bottom: 0;
+}
+
 .guzman-back.caido {
   padding: 0;
 }
@@ -1087,8 +1145,11 @@ button:focus {
   max-height: 100vh;
   margin-top: -5vh;
 }
-.border-new {
+.lines-new {
   stroke: var(--bomb);
+}
+.border-new {
+  /* stroke: var(--bomb); */
 }
 .newFill-red {
   fill: var(--color-red);
@@ -1128,19 +1189,16 @@ button:focus {
 }
 .new-text {
   /* font-family: "Noto Serif", serif; */
+  width: 100%;
+  z-index: 5000;
   position: absolute;
-  z-index: 1000;
-  transform-origin: center center;
-  top: 54%;
-  left: 40%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  -o-transform: translateY(-50%) translateX(-50%);
+  top: 0;
+  left: 0;
+  max-width: 1460px;
+  padding: 0 20px;
 }
 .new-text p {
-  font-size: calc(0.6vw + 1vh);
+  /* font-size: calc(4vw + 1vh); */
   line-height: 1.5;
   color: var(--main-bg-color);
   border-top: 1px solid var(--guzman-back);
@@ -1151,12 +1209,15 @@ button:focus {
   display: block;
   width: 95%;
   font-family: "Noto Serif", serif;
-  font-size: calc(2vw + 2vh);
+  font-size: calc(2vw + 3vh);
   letter-spacing: 4px;
   font-weight: 100;
   line-height: 1;
   margin-bottom: 30px;
   color: var(--guzman-back);
+}
+.border-bomb {
+  display: none;
 }
 .creditos {
   position: relative;
@@ -1208,7 +1269,7 @@ img.logos {
   z-index: 50;
   font-size: 9pt;
   padding: 5px 10px;
-  background: rgba(250, 247, 240, 0.5);
+  background: rgba(250, 247, 240, 0.2);
   color: var(--color-red);
   text-align: right;
   line-height: 1.2;
@@ -1327,15 +1388,26 @@ img.logos {
 
 /* Large devices (desktops, 1024px and up) */
 @media screen and (min-width: 1024px) {
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: var(--font-size);
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+
   p {
     margin-bottom: 20px;
     /* border-left: 1px solid rgba(68, 48, 60, 0.2); */
     padding-left: 20px;
   }
 
+  .hero-letter {
+    margin: 0 -2.5px;
+  }
+
   .hero-dpto {
-    font-size: calc(var(--font-size) * 1.5);
-    color: var(--color-red);
+    /* font-size: calc(var(--font-size) * 1.5); */
   }
 
   svg.scrollArrow {
@@ -1344,64 +1416,191 @@ img.logos {
 
   .hero-info {
     width: 55%;
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-info-map {
     width: 48%;
-    float: left;
-    height: 100%;
+    margin-right: 5%;
   }
-  .hero-info::after {
+
+  .hero-img-copy {
+    font-size: 10pt;
+    margin: 10px 30px 0;
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
+  .context {
+    width: 85vw;
+    max-width: 1040px;
+    margin: auto;
+    margin-top: -10%;
+    margin-bottom: 22vh;
+    position: relative;
+    z-index: 1;
+    border: solid 1px var(--main-bg-color);
+  }
+  .context-text {
+    position: relative;
+    z-index: 10;
+    margin: 40% 0 0 35%;
+    width: 58%;
+  }
+  blockquote {
+    font-family: "Noto Serif", serif;
+    line-height: 1.2;
+    font-style: italic;
+    font-size: calc(1.8vw + 1vh);
+    z-index: 1;
+    margin-bottom: 10vh;
+    padding-left: 5vw;
+  }
+  blockquote svg {
+    position: absolute;
+    z-index: -1;
+    top: -40%;
+    left: -6%;
+    width: 30%;
+    fill: var(--hero-bg-color);
+  }
+  .context-text cite {
+    display: block;
+    font-size: calc(var(--font-size) - 3pt);
+    font-style: normal;
+    margin: 20px 0 0 30px;
+  }
+
+  .context-map {
+    position: absolute;
+    z-index: 5;
+    top: -28%;
+    left: 0;
+    width: 45vw;
+  }
+  .location-pin {
+    fill: var(--color-red);
+    height: 40px;
+    position: absolute;
+    top: calc(59.5% - 42px);
+    left: -20.7%;
+  }
+  .map-colombia {
+    stroke: var(--hero-bg-color);
+    stroke-width: 1px;
+    fill: #fcfaf7;
+  }
+  .map-huila {
+    fill: var(--main-bg-color);
+    stroke: var(--hero-bg-color);
+    stroke-width: 1px;
+  }
+  .map-algeciras {
+    fill: var(--hero-bg-color);
+  }
+
+  .content-info {
+    max-width: 1040px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  .content-info::after {
     content: ".";
     visibility: hidden;
     display: block;
     height: 0;
     clear: both;
   }
-
-  .hero-info-text {
-    width: 45%;
+  .content-info h2 {
     float: right;
-    height: 100%;
+    font-size: calc(2vw + 3vh);
+    line-height: 1;
+    display: inline-block;
+    width: 47%;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: var(--guzman-back);
+  }
+  .content-info span {
+    float: left;
+    width: 52%;
+    margin-right: 1%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--guzman-back);
+  }
+  .content-info p {
+    float: right;
+    width: 47%;
+  }
+  .content-info p span {
+    width: auto;
+    float: none;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .content-info p:first-of-type {
+    float: left;
+    width: 52%;
+    margin-right: 1%;
+    padding-right: 2%;
+  }
+  .content-info p:first-of-type::first-letter {
+    font-family: "Noto Serif", serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    float: left;
+    font-size: calc(2.5vw + 3vh);
+    line-height: 40px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    color: var(--guzman-back);
   }
 
-  .hero-info-map svg {
-    width: 95%;
+  .atentados {
+    position: relative;
+    width: 94vw;
+    max-width: 1200px;
+    margin: 1vh auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5000;
+  }
+  .atentados-copy p {
+    margin-bottom: 0;
+  }
+  .atentado {
+    max-width: 48%;
+    margin: 3% 1% 0;
+    border-top: 1px solid var(--color-red2);
+    border-bottom: 1px solid var(--color-red2);
+    padding: 0px 10px;
+    position: relative;
+  }
+  .atentado:after {
+    content: "";
     display: block;
-    margin: 20px auto 0;
-  }
-
-  .context-text {
-    margin: 40% 0 0 35%;
-    width: 58%;
-  }
-  blockquote {
-    line-height: 1.2;
-    font-style: italic;
-    font-size: calc(1.8vw + 1vh);
-    margin-bottom: 15vh;
-    padding-left: 6vw;
-  }
-  blockquote svg {
-    top: -40%;
-    left: -6%;
-    width: 30%;
-  }
-  .context-text cite {
-    margin: 20px 0 0 30px;
-  }
-
-  .context-map {
-    top: -28%;
-    left: 0;
-    width: 45vw;
-  }
-
-  .map-colombia {
-    stroke-width: 1px;
-  }
-  .map-huila {
-    stroke-width: 1px;
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    width: calc(100% - 19px);
+    height: calc(100% + 26px);
+    border-left: 1px solid var(--color-red2);
+    border-right: 1px solid var(--color-red2);
   }
 
   h1 {
@@ -1420,6 +1619,56 @@ img.logos {
   h1 span.mario {
     color: var(--guzman-back);
   }
+
+  .guzman-iglesia {
+    width: 52%;
+  }
+
+  .xMovil {
+    display: none;
+  }
+  .xDesk {
+    display: block;
+  }
+  .guzman-info p {
+    width: 60%;
+  }
+  .guzman-info.new {
+    margin-top: 5vh;
+    padding-top: 5vh;
+  }
+  .guzman-info.new p {
+    width: 45%;
+  }
+  .guzman-info.foto {
+    height: 75vh;
+    margin-top: 10vh;
+  }
+  .guzman-foto {
+    width: 50%;
+  }
+  .guzman-info.foto h2 {
+    font-size: calc(6vw + 8vh);
+    line-height: 0.66;
+    left: 6%;
+    bottom: -6%;
+  }
+  .guzman-text p {
+    width: 60%;
+  }
+  .obra-text {
+    width: 60%;
+  }
+  .guzman-info.obra p.cristo-title {
+    top: -30%;
+    left: 30%;
+  }
+  .new-text span {
+    width: 70%;
+  }
+  .new-text p {
+    width: 60%;
+  
 }
 
 /* Small devices (landscape phones, 576px and up) */
