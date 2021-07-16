@@ -1,0 +1,85 @@
+/*!
+ * Popover v1.0.2
+ * https://sa-si-dev.github.io/popover
+ * Licensed under MIT (https://github.com/sa-si-dev/popover/blob/master/LICENSE)
+ */
+.pop-comp-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  color: #faf7f0;
+  background-color: #8d7766;
+  text-align: left;
+  flex-wrap: wrap;
+  z-index: 1;
+  max-width: 320px;
+}
+.new-text .pop-comp-wrapper {
+  background-color: var(--guzman-back);
+  color: var(--color-red);
+}
+.new-text .pop-comp-arrow::before {
+  background-color: var(--guzman-back);
+}
+.pop-comp-arrow {
+  position: absolute;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.pop-comp-arrow::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: #8d7766;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: ;
+  transform: rotate(45deg);
+  -moz-transform: ;
+  -ms-transform: ;
+  -o-transform: ;
+}
+.pop-comp-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px 20px;
+  font-size: 9pt;
+}
+.pop-comp-content a {
+  margin-top: 10px;
+  display: block;
+  line-height: 1.5;
+}
+.pop-comp-wrapper.position-bottom .pop-comp-arrow {
+  margin-left: -8px;
+  left: 0;
+  top: -15px;
+}
+.pop-comp-wrapper.position-bottom .pop-comp-arrow::before {
+  /* box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.14); */
+}
+.pop-comp-wrapper.position-top .pop-comp-arrow {
+  margin-left: -8px;
+  left: 0;
+  bottom: -15px;
+}
+.pop-comp-wrapper.position-right .pop-comp-arrow {
+  margin-top: -8px;
+  top: 0;
+  left: -15px;
+}
+.pop-comp-wrapper.position-left .pop-comp-arrow {
+  margin-top: -8px;
+  top: 0;
+  right: -15px;
+}
+.pop-comp-disable-events {
+  pointer-events: none;
+}
