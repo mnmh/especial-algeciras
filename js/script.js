@@ -149,7 +149,7 @@ function enterAudio3() {
   }
 }
 function leaveAudio3() {
-  wave1.classList.remove("on");
+  wave3.classList.remove("on");
   wavesurfer3.pause();
   iconPlay3.classList.add('off');
   iconPause3.classList.add('off');
@@ -207,7 +207,6 @@ new Splide( '.splideObras', {
 //     yPercent: 100, 
 //     ease: "power3.out",
 //     scrollTrigger: {
-//       markers: true,
 //       trigger: section,
 //       start: 'top 70%',
 //       end: 'top 60%',
@@ -464,7 +463,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".guzman-info.foto h2", {
       yPercent: 60,
       scrollTrigger: {
-        markers: true,
         trigger: ".guzman-back.new",
         start: "20% top",
         end: "90% top",
