@@ -32,8 +32,8 @@ const wavesurfer1 = WaveSurfer.create({
   waveColor: '#33aaa7',
   progressColor: '#8d7766',
 });
-wavesurfer1.load('../images/Curadora.mp3');
-/* wavesurfer1.load('https://ia601506.us.archive.org/10/items/marioguzman/marioguzman.mp3'); */
+/* wavesurfer1.load('../images/Curadora.mp3'); */
+wavesurfer1.load('https://ia801405.us.archive.org/28/items/mario-guzman-1/Curadora.mp3');
 
 const iconPlay1 = document.querySelector('#iconPlay1');
 const iconPause1 = document.querySelector('#iconPause1');
@@ -81,7 +81,7 @@ const wavesurfer2 = WaveSurfer.create({
   waveColor: '#33aaa7',
   progressColor: '#8d7766',
 });
-wavesurfer2.load('images/MarioGuzman-1.mp3');
+wavesurfer2.load('https://ia601405.us.archive.org/28/items/mario-guzman-1/MarioGuzman-1.mp3');
 const iconPlay2 = document.querySelector('#iconPlay2');
 const iconPause2 = document.querySelector('#iconPause2');
 const wave2 = document.querySelector('.audio2');
@@ -128,7 +128,7 @@ const wavesurfer3 = WaveSurfer.create({
   waveColor: '#33aaa7',
   progressColor: '#8d7766',
 });
-wavesurfer3.load('images/MarioGuzman-2.mp3');
+wavesurfer3.load('https://ia801405.us.archive.org/28/items/mario-guzman-1/MarioGuzman-2.mp3');
 const iconPlay3 = document.querySelector('#iconPlay3');
 const iconPause3 = document.querySelector('#iconPause3');
 const wave3 = document.querySelector('.audio3');
