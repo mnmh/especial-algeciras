@@ -163,8 +163,6 @@ document.querySelector('.playPause3').onclick = function () {
 };
 
 gsap.set(".ruinas", { autoAlpha: 0 });
-gsap.to(".attack", { autoAlpha: 0, scale: 0.8, duration: 0.5 });
-gsap.set(".arrow-box", { autoAlpha: 1 });
 
 new Splide( '.splideOld', {
   type: 'fade',
@@ -359,30 +357,31 @@ ScrollTrigger.matchMedia({
       .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
       .from(".attack-1", { autoAlpha: 0, ease: "power1out", duration: 1 })
       .from(".attack-1", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
+      .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-1", { autoAlpha: 0 }, "-=0.2")
       .to(".border-1", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#e3ddd9" }, "<")
       .from(".attack-2", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
       .from(".attack-2", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
+      .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-2", { autoAlpha: 0 }, "-=0.2")
       .to(".border-2", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#aa998c" }, "<")
       .to(".border", { stroke: "#bfd5d6" }, "<")
       .from(".attack-3", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
       .from(".attack-3", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
+      .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-3", { autoAlpha: 0 }, "-=0.2")
       .to(".border-3", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#aa998c" }, "<")
       .from(".attack-4", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
       .from(".attack-4", { y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
+      .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-4", { autoAlpha: 0 }, "-=0.2")
       .to(".border-4", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#8d7766" }, "<")
-      .from(".attack-5", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-5", { autoAlpha: 0, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-5", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
       .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-5", { autoAlpha: 0 }, "-=0.2")
       .to(".border-5", { autoAlpha: 0 }, "<")
@@ -408,7 +407,7 @@ ScrollTrigger.matchMedia({
     ScrollTrigger.create({
       trigger: ".audio2",
       start: "top top",
-      endTrigger: ".splideOld",
+      endTrigger: ".news3",
       end: "bottom top",
       pinSpacing: false,
       pin: true,
@@ -462,12 +461,13 @@ ScrollTrigger.matchMedia({
       }
     });
     
-    gsap.from(".guzman-info.foto h2", {
-      yPercent: -250,
+    gsap.to(".guzman-info.foto h2", {
+      yPercent: 60,
       scrollTrigger: {
+        markers: true,
         trigger: ".guzman-back.new",
-        start: "10% top",
-        end: "80% top",
+        start: "20% top",
+        end: "90% top",
         scrub: true
       }
     });
@@ -690,57 +690,58 @@ ScrollTrigger.matchMedia({
         scrub: 1.5
       }
     })
-      .from(".old-5, .border-5", { y: innerHeight + 400, ease: "power1out" })
-      .from(".old-4, .border-4", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-3, .border-3", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-2, .border-2", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
-      .from(".attack-1", { autoAlpha: 0, ease: "power1out", duration: 1 })
-      .from(".attack-1", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
-      .to(".old-1", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-1", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#e3ddd9" }, "<")
-      .from(".attack-2", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
-      .from(".attack-2", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
-      .to(".old-2", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-2", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#aa998c" }, "<")
-      .to(".border", { stroke: "#bfd5d6" }, "<")
-      .from(".attack-3", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
-      .from(".attack-3", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
-      .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
-      .to(".old-3", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-3", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#aa998c" }, "<")
-      .from(".attack-4", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
-      .from(".attack-4", { y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "back.in(2)" })
-      .to(".old-4", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-4", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#8d7766" }, "<")
-      .from(".attack-5", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-5", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-5", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#715540" }, "<")
-      .to({}, { duration: 2 })
-      .to(".ruinas-3", { autoAlpha: 1 }, "-=0.5")
-      .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1 }, "<")
-      .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-1", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: -20, yPercent: -25, duration: 1 }, "<")
-      .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-2", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration: 1 }, "<")
-      .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-4", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration: 1 }, "<")
-      .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
-      .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
-      .to(".iglesia-old", { autoAlpha: 0})
-      .to(".old-fixed", { opacity: 1 },"<-0.1")
+    .from(".old-5, .border-5", { y: innerHeight + 400, ease: "power1out" })
+    .from(".old-4, .border-4", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-3, .border-3", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-2, .border-2", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
+    .from(".attack-1", { autoAlpha: 0, ease: "power1out", duration: 1 })
+    .from(".attack-1", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-1", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-1", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#e3ddd9" }, "<")
+    .from(".attack-2", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-2", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-2", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-2", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#aa998c" }, "<")
+    .to(".border", { stroke: "#bfd5d6" }, "<")
+    .from(".attack-3", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-3", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-3", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-3", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#aa998c" }, "<")
+    .from(".attack-4", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-4", { y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+    .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-4", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-4", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#8d7766" }, "<")
+    .from(".attack-5", { autoAlpha: 0, ease: "power1out", duration: 2 }, "-=0.8")
+    .from(".attack-5", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-5", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-5", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#715540" }, "<")
+    .to({}, { duration: 2 })
+    .to(".ruinas-3", { autoAlpha: 1 }, "-=0.5")
+    .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1 }, "<")
+    .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-1", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: -20, yPercent: -25, duration: 1 }, "<")
+    .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-2", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration: 1 }, "<")
+    .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-4", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration: 1 }, "<")
+    .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
+    .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
+    .to(".iglesia-old", { autoAlpha: 0})
+    .to(".old-fixed", { opacity: 1 },"<-0.1")
     ;
     
     ScrollTrigger.create({
