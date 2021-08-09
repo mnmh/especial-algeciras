@@ -1357,9 +1357,9 @@ button:focus {
 .creditos {
   position: relative;
   width: 100vw;
-  height: 90vh;
+  min-height: 100vh;
   background: var(--guzman-back);
-  padding: 0 5%;
+  padding: 10vh 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1367,24 +1367,28 @@ button:focus {
   z-index: 100;
 }
 .creditos p {
+  max-width: 500px;
   border: none;
   text-align: center;
-  margin-bottom: 10vh;
+  margin-bottom: 2vh;
   /* font-family: "Noto Serif", serif; */
   color: var(--color-red);
 }
+.creditos p:last-child {
+  margin-bottom: 0;
+}
 .creditos p span {
-  display: block;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 300;
+  font-size: calc(var(--font-size) - 3pt);
 }
 img.logos {
   width: 100%;
   max-width: 800px;
+  margin: 6vh 0;
 }
 .lab {
   width: 100vw;
-  height: 10vh;
+  height: 8vh;
   background: var(--color-red);
   padding: 0 5%;
   display: flex;
