@@ -34,7 +34,6 @@ const wavesurfer1 = WaveSurfer.create({
 });
 /* wavesurfer1.load('../images/Curadora.mp3'); */
 wavesurfer1.load('../audio/Curadora.mp3');
-
 const iconPlay1 = document.querySelector('#iconPlay1');
 const iconPause1 = document.querySelector('#iconPause1');
 const wave1 = document.querySelector('.audio1');
@@ -81,6 +80,7 @@ const wavesurfer2 = WaveSurfer.create({
   waveColor: '#33aaa7',
   progressColor: '#8d7766',
 });
+
 wavesurfer2.load('../audio/MarioGuzman-1.mp3');
 const iconPlay2 = document.querySelector('#iconPlay2');
 const iconPause2 = document.querySelector('#iconPause2');
@@ -128,6 +128,7 @@ const wavesurfer3 = WaveSurfer.create({
   waveColor: '#33aaa7',
   progressColor: '#8d7766',
 });
+
 wavesurfer3.load('../audio/MarioGuzman-2.mp3');
 const iconPlay3 = document.querySelector('#iconPlay3');
 const iconPause3 = document.querySelector('#iconPause3');
