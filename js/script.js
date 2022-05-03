@@ -33,7 +33,7 @@ const wavesurfer1 = WaveSurfer.create({
   progressColor: '#8d7766',
 });
 /* wavesurfer1.load('../images/Curadora.mp3'); */
-wavesurfer1.load('../audio/Curadora.mp3');
+wavesurfer1.load('/audio/Curadora.mp3');
 const iconPlay1 = document.querySelector('#iconPlay1');
 const iconPause1 = document.querySelector('#iconPause1');
 const wave1 = document.querySelector('.audio1');
@@ -81,7 +81,7 @@ const wavesurfer2 = WaveSurfer.create({
   progressColor: '#8d7766',
 });
 
-wavesurfer2.load('../audio/MarioGuzman-1.mp3');
+wavesurfer2.load('/audio/MarioGuzman-1.mp3');
 const iconPlay2 = document.querySelector('#iconPlay2');
 const iconPause2 = document.querySelector('#iconPause2');
 const wave2 = document.querySelector('.audio2');
@@ -129,7 +129,7 @@ const wavesurfer3 = WaveSurfer.create({
   progressColor: '#8d7766',
 });
 
-wavesurfer3.load('../audio/MarioGuzman-2.mp3');
+wavesurfer3.load('/audio/MarioGuzman-2.mp3');
 const iconPlay3 = document.querySelector('#iconPlay3');
 const iconPause3 = document.querySelector('#iconPause3');
 const wave3 = document.querySelector('.audio3');
@@ -165,7 +165,7 @@ document.querySelector('.playPause3').onclick = function () {
 
 gsap.set(".ruinas", { autoAlpha: 0 });
 
-new Splide( '.splideOld', {
+new Swiper( '.swiperOld', {
   type: 'fade',
   rewind: true,
   height: '85vh',
@@ -174,7 +174,7 @@ new Splide( '.splideOld', {
   lazyLoad: 'nearby',
   arrowPath: 'M13.86,37a.85.85,0,0,1-.61-.25.87.87,0,0,1,0-1.22L28.92,20,13.25,4.47a.87.87,0,0,1,0-1.22.88.88,0,0,1,1.22,0L30.75,19.39a.87.87,0,0,1,0,1.22L14.47,36.75A.85.85,0,0,1,13.86,37Z'
 }).mount();
-new Splide( '.splideNew', {
+new Swiper( '.swiperNew', {
   type: 'fade',
   rewind: true,
   height: '85vh',
@@ -182,7 +182,7 @@ new Splide( '.splideNew', {
   speed: '800',
   arrowPath: 'M13.86,37a.85.85,0,0,1-.61-.25.87.87,0,0,1,0-1.22L28.92,20,13.25,4.47a.87.87,0,0,1,0-1.22.88.88,0,0,1,1.22,0L30.75,19.39a.87.87,0,0,1,0,1.22L14.47,36.75A.85.85,0,0,1,13.86,37Z'
 }).mount();
-new Splide( '.splideObras', {
+new Swiper( '.swiperObras', {
   type: 'fade',
   rewind: true,
   height: '100vh',
@@ -746,7 +746,7 @@ ScrollTrigger.matchMedia({
     ScrollTrigger.create({
       trigger: ".audio2",
       start: "top top",
-      endTrigger: ".splideOld",
+      endTrigger: ".swiperOld",
       end: "bottom top",
       pinSpacing: false,
       pin: true,
