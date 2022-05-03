@@ -8,91 +8,161 @@ gsap.registerPlugin(ScrollTrigger);
 //   }
 // }
 
+PopoverComponent.init({
+  ele: '.popover-ele',
+  position: 'top'
+});
+
 ScrollTrigger.config({ limitCallbacks: true });
 
+function playAudio(voz) {
+  voz.playPause();
+}
 
-// // Create an instance
-// let wavesurfer = {};
+const wavesurfer1 = WaveSurfer.create({
+  container: '#waveBox1',
+  responsive: true,
+  barWidth: 0.6,
+  barHeight: 1,
+  barGap: 2,
+  cursorWidth: 0,
+  dragSelection: true,
+  height: 42,
+  normalize: true,
+  waveColor: '#33aaa7',
+  progressColor: '#8d7766',
+});
+/* wavesurfer1.load('../images/Curadora.mp3'); */
+wavesurfer1.load('../audio/Curadora.mp3');
 
-// // Init & load audio file
-// document.addEventListener('DOMContentLoaded', function() {
-//     wavesurfer = WaveSurfer.create({
-//         container: document.querySelector('#waveform'),
-//         barWidth: 2,
-//         barHeight: 1,
-//         barGap: null
-//     });
-
-//     wavesurfer.on('error', function(e) {
-//         console.warn(e);
-//     });
-
-//     // Load audio from URL
-//     // wavesurfer.load('https://wavesurfer-js.org/example/media/demo.wav');
-//   // wavesurfer.load('https://ia802709.us.archive.org/32/items/GlenMiller-MoonlightSerenade/8a3748ab5a59.mp3');
-//   wavesurfer.load('http://museodememoria.gov.co/algeciras/images/MarioGuzman-1.mp3');
-  
-//   wavesurfer.on('ready', function () {
-//     wavesurfer.play();
-//     wavesurfer.pause();
-//   });
-
-// });
-
-
-
-// var wavesurfer = WaveSurfer.create({
-//   container: '#waveform',
-//   backend: 'MediaElement',
-//   responsive: true,
-//   barWidth: 1,
-//   barHeight: 1,
-//   barGap: 2,
-//   cursorWidth: 0,
-//   dragSelection: true,
-//   height: 38,
-//   hideScrollbar: true,
-//   interact: true,
-//   normalize: true,
-//   waveColor: '#f90',
-//   progressColor: '#5b4231'
-// });
-// wavesurfer.load('images/MarioGuzman-1.mp3');
-
-// function playAudio1() {
-//   wavesurfer.playPause();
-// }
-
-// const audio = document.querySelector('.playPause')
-// const audioIcons = document.querySelectorAll('.audioIcon');
-// audio.onclick = function () {
-//   playAudio1();
-//   // audioIcons.forEach(x => x.classList.toggle('off'))
-//   audioIcons.forEach(function(icon) {
-//     if (icon.classList.contains('off')) {
-//       icon.classList.remove('off');
-//     } else {
-//         icon.classList.add('off');
-//     }
-//   });
-// };
-
-// ScrollTrigger.create({
-//   trigger: ".waveform",
-//   start: "bottom bottom",
-//   endTrigger: "#titulo",
-//   end: "top bottom",
-//   pinSpacing: false,
-//   pin: true,
-//   onEnter: playAudio1,
-//   onLeave: playAudio1,
-//   onEnterBack: playAudio1,
-//   onLeaveBack: playAudio1
-// });
+const iconPlay1 = document.querySelector('#iconPlay1');
+const iconPause1 = document.querySelector('#iconPause1');
+const wave1 = document.querySelector('.audio1');
+wavesurfer1.on('play', function () {
+  iconPlay1.classList.add("off");
+  iconPause1.classList.remove('off');
+});
+wavesurfer1.on('pause', function () {
+  iconPause1.classList.add('off');
+  iconPlay1.classList.remove("off");
+});
+function enterAudio1() {
+  wave1.classList.add("on");
+  if (wavesurfer1.isPlaying()) {return;}
+  else {
+    iconPlay1.classList.remove('off');
+    iconPause1.classList.add('off');
+  }
+}
+function leaveAudio1() {
+  wave1.classList.remove("on");
+  wavesurfer1.pause();
+  iconPlay1.classList.add('off');
+  iconPause1.classList.add('off');
+}
+document.querySelector('.play1').onclick = function () {
+  playAudio(wavesurfer1);
+  gsap.to(window, { duration: 5, ease: "power3.inOut", scrollTo: ".explicacion" });
+};
+document.querySelector('.playPause1').onclick = function () {
+  playAudio(wavesurfer1);
+};
+//
+const wavesurfer2 = WaveSurfer.create({
+  container: '#waveBox2',
+  responsive: true,
+  barWidth: 0.6,
+  barHeight: 1,
+  barGap: 2,
+  cursorWidth: 0,
+  dragSelection: true,
+  height: 42,
+  normalize: true,
+  waveColor: '#33aaa7',
+  progressColor: '#8d7766',
+});
+wavesurfer2.load('../audio/MarioGuzman-1.mp3');
+const iconPlay2 = document.querySelector('#iconPlay2');
+const iconPause2 = document.querySelector('#iconPause2');
+const wave2 = document.querySelector('.audio2');
+wavesurfer2.on('play', function(){
+  iconPlay2.classList.add("off");
+  iconPause2.classList.remove('off');
+});
+wavesurfer2.on('pause', function () {
+  iconPause2.classList.add('off');
+  iconPlay2.classList.remove("off");
+});
+function enterAudio2() {
+  wave2.classList.add("on");
+  if (wavesurfer2.isPlaying()) {return;}
+  else {
+    iconPlay2.classList.remove('off');
+    iconPause2.classList.add('off');
+  }
+}
+function leaveAudio2() {
+  wave2.classList.remove("on");
+  wavesurfer2.pause();
+  iconPlay2.classList.add('off');
+  iconPause2.classList.add('off');
+}
+document.querySelector('.play2').onclick = function () {
+  playAudio(wavesurfer2);
+  gsap.to(window, { duration: 2, ease: "power2.out", scrollTo: ".old" });
+};
+document.querySelector('.playPause2').onclick = function () {
+  playAudio(wavesurfer2);
+};
+//
+const wavesurfer3 = WaveSurfer.create({
+  container: '#waveBox3',
+  responsive: true,
+  barWidth: 0.6,
+  barHeight: 1,
+  barGap: 2,
+  cursorWidth: 0,
+  dragSelection: true,
+  height: 42,
+  normalize: true,
+  waveColor: '#33aaa7',
+  progressColor: '#8d7766',
+});
+wavesurfer3.load('../audio/MarioGuzman-2.mp3');
+const iconPlay3 = document.querySelector('#iconPlay3');
+const iconPause3 = document.querySelector('#iconPause3');
+const wave3 = document.querySelector('.audio3');
+wavesurfer3.on('play', function(){
+  iconPlay3.classList.add("off");
+  iconPause3.classList.remove('off');
+});
+wavesurfer3.on('pause', function () {
+  iconPause3.classList.add('off');
+  iconPlay3.classList.remove("off");
+});
+function enterAudio3() {
+  wave3.classList.add("on");
+  if (wavesurfer3.isPlaying()) {return;}
+  else {
+    iconPlay3.classList.remove('off');
+    iconPause3.classList.add('off');
+  }
+}
+function leaveAudio3() {
+  wave3.classList.remove("on");
+  wavesurfer3.pause();
+  iconPlay3.classList.add('off');
+  iconPause3.classList.add('off');
+}
+document.querySelector('.play3').onclick = function () {
+  playAudio(wavesurfer3);
+  gsap.to(window, { duration: 2, ease: "power2.out", scrollTo: ".obras" });
+};
+document.querySelector('.playPause3').onclick = function () {
+  playAudio(wavesurfer3);
+};
 
 gsap.set(".ruinas", { autoAlpha: 0 });
-gsap.to(".attack", { autoAlpha: 0, scale: 0.8, duration: 0.5 });
-gsap.set(".arrow-box", { autoAlpha: 1 });
 
 new Splide( '.splideOld', {
   type: 'fade',
@@ -120,52 +190,7 @@ new Splide( '.splideObras', {
   arrowPath: 'M13.86,37a.85.85,0,0,1-.61-.25.87.87,0,0,1,0-1.22L28.92,20,13.25,4.47a.87.87,0,0,1,0-1.22.88.88,0,0,1,1.22,0L30.75,19.39a.87.87,0,0,1,0,1.22L14.47,36.75A.85.85,0,0,1,13.86,37Z'
 } ).mount();
 
-let keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
-}
-
-// modern Chrome requires { passive: false } when adding event
-let supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
-
-let wheelOpt = supportsPassive ? { passive: false } : false;
-let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-let attack = false;
-
-// call this to Disable
-function disableScroll() {
-  if (attack == false) {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-    attack = true;
-  }
-}
-
-// call this to Enable
-function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-gsap.fromTo(".arrow-box", { autoAlpha: 1 }, {
+/* gsap.fromTo(".arrow-box", { autoAlpha: 1 }, {
   autoAlpha: 0,
   scrollTrigger: {
     trigger: ".hero-img",
@@ -173,7 +198,7 @@ gsap.fromTo(".arrow-box", { autoAlpha: 1 }, {
     end: "top 85%",
     scrub: true
   }
-});
+}); */
 
 // let sections = gsap.utils.toArray('.paragraph');
 // sections.forEach((section) => {
@@ -182,7 +207,6 @@ gsap.fromTo(".arrow-box", { autoAlpha: 1 }, {
 //     yPercent: 100, 
 //     ease: "power3.out",
 //     scrollTrigger: {
-//       markers: true,
 //       trigger: section,
 //       start: 'top 70%',
 //       end: 'top 60%',
@@ -206,47 +230,59 @@ gsap.fromTo(".arrow-box", { autoAlpha: 1 }, {
 //   });
 // });
 
+ScrollTrigger.create({
+  trigger: ".audio1",
+  start: "top top",
+  endTrigger: ".content-junio",
+  end: "top top",
+  pinSpacing: false,
+  pin: true,
+  onEnter: enterAudio1,
+  onLeave: leaveAudio1,
+  onEnterBack: enterAudio1,
+  onLeaveBack: leaveAudio1
+});
+
 ScrollTrigger.matchMedia({
+  // All
+  "all": function() {
+    
+  },
   // desktop
   "(min-width: 800px)": function () {
     // Hero letters
     gsap.from(".hero-letter", {
-      yPercent: "random(-500, 10)",
-      xPercent: "random(-750, 750)",
+      yPercent: "random(-300, 50)",
+      xPercent: "random(-800, 800)",
       scale: "random(2, 7)",
-      // force3D: false,
-      ease: "power2.out",
-      opacity: 0.6,
+      ease: "power1.out",
+      opacity: "random(0.2, 1)",
+      transformOrigin: "center bottom",
       scrollTrigger: {
         trigger: ".hero-letters_box",
-        start: "top 5%",
-        end: "90% 60%",
+        start: "3% top",
+        end: "45% top",
         scrub: 1.5
       }
     });
 
     ScrollTrigger.create({
-      trigger: ".hero-letters_box",
+      ease: "power3.out",
+      trigger: ".hero",
       start: "top top",
       endTrigger: ".hero-img",
-      end: "70% top",
+      end: "56% top",
       pin: ".hero-letters"
-    });
-
-    ScrollTrigger.create({
-      trigger: ".hero-letters_box",
-      start: "top top",
-      endTrigger: ".hero-img",
-      end: "70% top",
-      pin: ".hero-dpto-pin",
     });
     
     gsap.from(".hero-dpto", {
-      y: '20vh',
+      yPercent: -200,
+      opacity: 0,
       scrollTrigger: {
-        trigger: ".hero-letters_box",
-        start: "top top",
-        end: "35% top",
+        trigger: ".hero-img",
+        start: "55% top",
+        end: "80% top",
+        ease: "power2.out",
         scrub: true
       }
     });
@@ -255,9 +291,10 @@ ScrollTrigger.matchMedia({
     const tlMap = gsap.timeline({
       defaults: { ease: "power2.out" },
       scrollTrigger: {
-        trigger: ".context",
-        start: "top 30%",
-        end: "bottom 73%",
+        trigger: ".hero-dpto",
+        start: "bottom top",
+        endTrigger: ".hero",
+        end: "bottom top",
         scrub: true,
         pin: ".context-map"
       }
@@ -267,7 +304,7 @@ ScrollTrigger.matchMedia({
       .from(".map-huila", { duration: 1.5, scale: 40, xPercent: 120, transformOrigin: "center center" }, "map")
       .from(".map-colombia", { duration: 1.2, scale: 40, transformOrigin: "center center" }, "map")
       .from(".map-colombia", { duration: 1.2, fill: "#faf7f0" }, "map+=1")
-      .from(".location-pin", { duration: 0.1, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=0.2")
+      .from(".location-pin", { duration: 0.5, scale: 0, yPercent: 2, transformOrigin: "center bottom" }, "-=0.2")
       .to({}, { duration: 0.2 })
       ;
     
@@ -317,28 +354,33 @@ ScrollTrigger.matchMedia({
       .from(".old-3, .border-3", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
       .from(".old-2, .border-2", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
       .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
-      .from(".attack-1", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 })
+      .from(".attack-1", { autoAlpha: 0, ease: "power1out", duration: 1 })
+      .from(".attack-1", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
       .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-1", { autoAlpha: 0 }, "-=0.2")
       .to(".border-1", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#e3ddd9" }, "<")
-      .from(".attack-2", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-2", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+      .from(".attack-2", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
       .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-2", { autoAlpha: 0 }, "-=0.2")
       .to(".border-2", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#aa998c" }, "<")
       .to(".border", { stroke: "#bfd5d6" }, "<")
-      .from(".attack-3", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-3", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+      .from(".attack-3", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
       .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-3", { autoAlpha: 0 }, "-=0.2")
       .to(".border-3", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#aa998c" }, "<")
-      .from(".attack-4", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-4", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+      .from(".attack-4", { y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
       .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-4", { autoAlpha: 0 }, "-=0.2")
       .to(".border-4", { autoAlpha: 0 }, "<")
       .to(".old", { backgroundColor: "#8d7766" }, "<")
-      .from(".attack-5", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-5", { autoAlpha: 0, ease: "power1out", duration: 2 }, "-=0.8")
+      .from(".attack-5", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
       .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
       .to(".old-5", { autoAlpha: 0 }, "-=0.2")
       .to(".border-5", { autoAlpha: 0 }, "<")
@@ -359,12 +401,25 @@ ScrollTrigger.matchMedia({
       .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
       .to(".iglesia-old", { autoAlpha: 0})
       .to(".old-fixed", { opacity: 1 },"<-0.1")
-      ;
+    ;
+    
+    ScrollTrigger.create({
+      trigger: ".audio2",
+      start: "top top",
+      endTrigger: ".news3",
+      end: "bottom top",
+      pinSpacing: false,
+      pin: true,
+      onEnter: enterAudio2,
+      onLeave: leaveAudio2,
+      onEnterBack: enterAudio2,
+      onLeaveBack: leaveAudio2
+    });
     
     gsap.fromTo("h1 span", { yPercent: 100 }, {
       yPercent: -25,
       scrollTrigger: {
-        trigger: ".news2",
+        trigger: ".news3",
         start: "20% top",
         endTrigger: "h1 span",
         end: "top top",
@@ -375,7 +430,7 @@ ScrollTrigger.matchMedia({
     gsap.to(".guzman-back.new", {
       yPercent: 20,
       scrollTrigger: {
-        trigger: ".news2",
+        trigger: ".news3",
         start: "bottom top",
         endTrigger: ".guzman-back.new",
         end: "20% top",
@@ -405,12 +460,12 @@ ScrollTrigger.matchMedia({
       }
     });
     
-    gsap.from(".guzman-info.foto h2", {
-      yPercent: -250,
+    gsap.to(".guzman-info.foto h2", {
+      yPercent: 60,
       scrollTrigger: {
         trigger: ".guzman-back.new",
-        start: "10% top",
-        end: "80% top",
+        start: "20% top",
+        end: "90% top",
         scrub: true
       }
     });
@@ -445,6 +500,19 @@ ScrollTrigger.matchMedia({
       .from(".cristo-1", { duration: 10, yPercent: 40 }, "-=3")
       .from(".cristo-1", { duration: 5, opacity: 0 }, "<")
     ;
+
+    ScrollTrigger.create({
+      trigger: ".audio3",
+      start: "top top",
+      endTrigger: ".caido",
+      end: "bottom top",
+      pinSpacing: false,
+      pin: true,
+      onEnter: enterAudio3,
+      onLeave: leaveAudio3,
+      onEnterBack: enterAudio3,
+      onLeaveBack: leaveAudio3
+    });
     
     gsap.from(".obras-box img", {
       opacity: 0,
@@ -500,20 +568,22 @@ ScrollTrigger.matchMedia({
       }
     })
       .from(".old-new", { autoAlpha: 0, duration: 1 })
-      .from(".new-6, .border-new-6", { y: innerHeight + 600, ease:"power2.out" })
-      .from(".new-5, .border-new-5", { y: innerHeight + 600, ease:"power2.out" }, ">")
-      .from(".new-4, .border-new-4", { y: innerHeight + 600, ease:"power2.out" }, "-=0.15")
-      .from(".new-3, .border-new-3", { y: innerHeight + 600, ease:"power2.out" }, "-=0.15")
-      .from(".new-1, .border-new-1", { y: innerHeight + 600, ease:"power2.out" }, "-=0.15")
-      .from(".new-2, .border-new-2", { y: innerHeight + 600, ease:"power2.out" }, "-=0.15")
-      .set(".shot-new", { autoAlpha: 0 } )
+      .from(".new-6, .border-new-6", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" })
+      .from(".new-5, .border-new-5", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" }, ">")
+      .from(".new-4, .border-new-4", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" }, "-=0.15")
+      .from(".new-3, .border-new-3", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" }, "-=0.15")
+      .from(".new-1, .border-new-1", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" }, "-=0.15")
+      .from(".new-2, .border-new-2", { y: innerHeight + 600, duration: 0.8, ease:"power2.out" }, "-=0.15")
+      .set(".shot-new", { autoAlpha: 0 })
+      .to({}, { duration: 0.8 })
       .addLabel("newText")
       .to(".old-new", { backgroundColor: "#715540", duration: "0.4" }, "newText")
       .to(".attack-new", { autoAlpha: 1, scale: "random(1, 1.8)", duration: "random(2, 4)" }, "newText")
       .to(".new-foto", { autoAlpha: 0, scale: "random(0.9, 0.7)", duration: "random(0.5, 0.8)", transformOrigin: "center center" }, "newText")
       // .to(".lines-new", { stroke: "#bfd5d6", duration: "0.4" }, "newText")
-      .fromTo(".new-text", { y: innerHeight + 600 }, { y: innerHeight - 550, duration: 2 }, "newText")
-      .to({}, { duration: 1 })
+      .from(".new-text span", { autoAlpha: 0, duration: 2 }, "newText+=0.8")
+      .from(".new-text p", { autoAlpha: 0, duration: 2 }, "newText+=2")
+      .to({}, { duration: 0.2 })
     ;
   
   },
@@ -522,41 +592,37 @@ ScrollTrigger.matchMedia({
   "(max-width: 799px)": function () {
     // Hero letters
     gsap.from(".hero-letter", {
-      yPercent: "random(-600, 150)",
-      xPercent: "random(-350, 350)",
-      scale: "random(2, 6)",
-      opacity: 1,
-      force3D: false,
+      yPercent: "random(-400, -100)",
+      xPercent: "random(-800, 800)",
+      scale: "random(2, 7)",
+      ease: "power1.out",
+      opacity: "random(0.2, 1)",
+      transformOrigin: "center bottom",
       scrollTrigger: {
         trigger: ".hero-letters_box",
-        start: "5% top",
-        end: "20% top",
+        start: "3% top",
+        end: "45% top",
         scrub: 1.5
       }
     });
 
     ScrollTrigger.create({
-      trigger: ".hero-letters_box",
+      ease: "power3.out",
+      trigger: ".hero",
       start: "top top",
       endTrigger: ".hero-img",
-      end: "75% top",
-      pin: ".hero-dpto-pin",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".hero-letters_box",
-      start: "top top",
-      endTrigger: ".hero-img",
-      end: "75% top",
+      end: "70% top",
       pin: ".hero-letters"
     });
     
     gsap.from(".hero-dpto", {
-      y: '20vh',
+      yPercent: -200,
+      opacity: 0,
       scrollTrigger: {
-        trigger: ".hero-letters_box",
-        start: "top top",
-        end: "35% top",
+        trigger: ".hero-img",
+        start: "62% top",
+        end: "80% top",
+        ease: "power2.out",
         scrub: true
       }
     });
@@ -622,59 +688,77 @@ ScrollTrigger.matchMedia({
         scrub: 1.5
       }
     })
-      .from(".old-5, .border-5", { y: innerHeight + 400, ease: "power1out" })
-      .from(".old-4, .border-4", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-3, .border-3", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-2, .border-2", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
-      .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
-      .from(".attack-1", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 })
-      .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-1", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-1", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#e3ddd9" }, "<")
-      .from(".attack-2", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-2", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-2", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#aa998c" }, "<")
-      .to(".border", { stroke: "#bfd5d6" }, "<")
-      .from(".attack-3", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-3", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-3", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#aa998c" }, "<")
-      .from(".attack-4", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-4", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-4", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#8d7766" }, "<")
-      .from(".attack-5", { autoAlpha: 0, y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
-      .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
-      .to(".old-5", { autoAlpha: 0 }, "-=0.2")
-      .to(".border-5", { autoAlpha: 0 }, "<")
-      .to(".old", { backgroundColor: "#715540" }, "<")
-      .to({}, { duration: 2 })
-      .to(".ruinas-3", { autoAlpha: 1 }, "-=0.5")
-      .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1 }, "<")
-      .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-1", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: -20, yPercent: -25, duration: 1 }, "<")
-      .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-2", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration: 1 }, "<")
-      .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
-      .to(".ruinas-4", { autoAlpha: 1 }, "<")
-      .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration: 1 }, "<")
-      .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
-      .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
-      .to(".iglesia-old", { autoAlpha: 0})
-      .to(".old-fixed", { opacity: 1 },"<-0.1")
-      ;
+    .from(".old-5, .border-5", { y: innerHeight + 400, ease: "power1out" })
+    .from(".old-4, .border-4", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-3, .border-3", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-2, .border-2", { y: innerHeight + 400, ease: "power1out" }, "-=0.15")
+    .from(".old-1, .border-1", { y: innerHeight + 600, ease: "power1out" }, "-=0.15")
+    .from(".attack-1", { autoAlpha: 0, ease: "power1out", duration: 1 })
+    .from(".attack-1", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-1", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-1", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-1", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#e3ddd9" }, "<")
+    .from(".attack-2", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-2", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-2", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-2", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-2", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#aa998c" }, "<")
+    .to(".border", { stroke: "#bfd5d6" }, "<")
+    .from(".attack-3", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-3", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-3", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-3", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-3", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#aa998c" }, "<")
+    .from(".attack-4", { autoAlpha: 0, ease: "power1out", duration: 1 }, "-=0.8")
+    .from(".attack-4", { y: innerHeight, ease: "power1out", duration: 2 }, "-=0.8")
+    .to(".attack-4", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-4", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-4", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#8d7766" }, "<")
+    .from(".attack-5", { autoAlpha: 0, ease: "power1out", duration: 2 }, "-=0.8")
+    .from(".attack-5", { y: innerHeight, ease: "power1out", duration: 2 }, "<")
+    .to(".attack-5", { autoAlpha: 0, scale: 0.8, duration: 0.2 })
+    .to(".old-5", { autoAlpha: 0 }, "-=0.2")
+    .to(".border-5", { autoAlpha: 0 }, "<")
+    .to(".old", { backgroundColor: "#715540" }, "<")
+    .to({}, { duration: 2 })
+    .to(".ruinas-3", { autoAlpha: 1 }, "-=0.5")
+    .to(".iglesia-old", { scale: 1.8, xPercent: 20, duration: 1 }, "<")
+    .to(".ruinas-3", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-1", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: -20, yPercent: -25, duration: 1 }, "<")
+    .to(".ruinas-1", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-2", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: 0, yPercent: 22, duration: 1 }, "<")
+    .to(".ruinas-2", { autoAlpha: 0, delay: 1 })
+    .to(".ruinas-4", { autoAlpha: 1 }, "<")
+    .to(".iglesia-old", { xPercent: 20, yPercent: -20, duration: 1 }, "<")
+    .to(".ruinas-4", { autoAlpha: 0, delay: 1 })
+    .to(".iglesia-old", { scale: 1, xPercent: 0, yPercent: 0 },"<")
+    .to(".iglesia-old", { autoAlpha: 0})
+    .to(".old-fixed", { opacity: 1 },"<-0.1")
+    ;
+    
+    ScrollTrigger.create({
+      trigger: ".audio2",
+      start: "top top",
+      endTrigger: ".splideOld",
+      end: "bottom top",
+      pinSpacing: false,
+      pin: true,
+      onEnter: enterAudio2,
+      onLeave: leaveAudio2,
+      onEnterBack: enterAudio2,
+      onLeaveBack: leaveAudio2
+    });
     
     gsap.fromTo("h1 span", { yPercent: 100 }, {
       yPercent: -25,
       scrollTrigger: {
-        trigger: ".news2",
+        trigger: ".news3",
         start: "20% top",
         endTrigger: "h1 span",
         end: "top top",
@@ -685,7 +769,7 @@ ScrollTrigger.matchMedia({
     gsap.to(".guzman-back.new", {
       yPercent: 20,
       scrollTrigger: {
-        trigger: ".news2",
+        trigger: ".news3",
         start: "bottom top",
         endTrigger: ".guzman-back.new",
         end: "20% top",
